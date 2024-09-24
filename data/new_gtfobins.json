@@ -1,0 +1,1354 @@
+[
+    {
+        "name": "xdg-user-dir",
+        "query": "xdg-user-dir '}; * #'"
+    },
+    {
+        "name": "run-parts",
+        "query": "run-parts --new-session --regex '^sh* /bin"
+    },
+    {
+        "name": "aa-exec",
+        "query": "aa-exec /bin/sh"
+    },
+    {
+        "name": "ansible-test",
+        "query": "ansible-test shell"
+    },
+    {
+        "name": "Command /bin/sh was executed",
+        "query": "comm=/bin/sh"
+    },
+    {
+        "name": "lualatex",
+        "query": "lualatex -shell-escape '*'"
+    },
+    {
+        "name": "task",
+        "query": "task execute"
+    },
+    {
+        "name": "nawk",
+        "query": "nawk"
+    },
+    {
+        "name": "stdbuf",
+        "query": "stdbuf -i0"
+    },
+    {
+        "name": "ispell",
+        "query": "ispell"
+    },
+    {
+        "name": "sed",
+        "query": "sed -n"
+    },
+    {
+        "name": "texec",
+        "query": "echo -e 'pipe\\tx\\texec * 1>&0 2>&0'"
+    },
+    {
+        "name": "ssh-agent",
+        "query": "ssh-agent"
+    },
+    {
+        "name": "slsh",
+        "query": "slsh -e 'system(\"*\")'"
+    },
+    {
+        "name": "eb",
+        "query": "eb logs"
+    },
+    {
+        "name": "find",
+        "query": "(find .) OR (find /)"
+    },
+    {
+        "name": "watch",
+        "query": "watch exec sh"
+    },
+    {
+        "name": "zsh",
+        "query": "comm\"*zsh*\""
+    },
+    {
+        "name": "yarn",
+        "query": "yarn exec"
+    },
+    {
+        "name": "scrot",
+        "query": "scrot -e"
+    },
+    {
+        "name": "cdist",
+        "query": "cdist shell -"
+    },
+    {
+        "name": "pwsh",
+        "query": "pwsh"
+    },
+    {
+        "name": "lftp",
+        "query": "lftp -c"
+    },
+    {
+        "name": "check_by_ssh",
+        "query": "check_by_ssh -o \"*\""
+    },
+    {
+        "name": "tar",
+        "query": "comm=\"*tar*\n"
+    },
+    {
+        "name": "genie",
+        "query": "genie -c"
+    },
+    {
+        "name": "jjs",
+        "query": "comm=\"*jjs*\n"
+    },
+    {
+        "name": "aoss",
+        "query": "aoss"
+    },
+    {
+        "name": "ssh",
+        "query": "comm=\"*ssh*\""
+    },
+    {
+        "name": "jtag",
+        "query": "jtag --interactive\nshell"
+    },
+    {
+        "name": "tclsh",
+        "query": "tclsh*"
+    },
+    {
+        "name": "node",
+        "query": "comm=\"node *\""
+    },
+    {
+        "name": "emacs",
+        "query": "emacs"
+    },
+    {
+        "name": "joe",
+        "query": "comm=\"joe *\""
+    },
+    {
+        "name": "certbot",
+        "query": "*certbot certonly"
+    },
+    {
+        "name": "sg",
+        "query": "comm=\"* sg *\""
+    },
+    {
+        "name": "dotnet",
+        "query": "comm=\"*dotnet *\""
+    },
+    {
+        "name": "rsync",
+        "query": "rsync -e"
+    },
+    {
+        "name": "rlwrap",
+        "query": "rlwrap"
+    },
+    {
+        "name": "dvips",
+        "query": "dvips"
+    },
+    {
+        "name": "yash",
+        "query": "yash"
+    },
+    {
+        "name": "knife",
+        "query": "knife exec"
+    },
+    {
+        "name": "git",
+        "query": "git"
+    },
+    {
+        "name": "vagrant",
+        "query": "vagrant"
+    },
+    {
+        "name": "pexec",
+        "query": "pexec"
+    },
+    {
+        "name": "ncftp",
+        "query": "ncftp"
+    },
+    {
+        "name": "volatility",
+        "query": "comm=\"volatility *\""
+    },
+    {
+        "name": "facter",
+        "query": "necho '*'"
+    },
+    {
+        "name": "bundler",
+        "query": "bundler help*"
+    },
+    {
+        "name": "torify",
+        "query": "torify"
+    },
+    {
+        "name": "sash",
+        "query": "sash"
+    },
+    {
+        "name": "rtorrent",
+        "query": "rtorrent"
+    },
+    {
+        "name": "dpkg",
+        "query": "dpkg *"
+    },
+    {
+        "name": "xetex",
+        "query": "xetex --shell-escape"
+    },
+    {
+        "name": "valgrind",
+        "query": "valgrind"
+    },
+    {
+        "name": "zypper",
+        "query": "zypper x\n*\ncp"
+    },
+    {
+        "name": "xdotool",
+        "query": "xdotool exec"
+    },
+    {
+        "name": "capsh",
+        "query": "capsh --"
+    },
+    {
+        "name": "nice",
+        "query": "nice"
+    },
+    {
+        "name": "nohup",
+        "query": "nohup"
+    },
+    {
+        "name": "php",
+        "query": "(comm=\"*.php\") OR (comm=\"php\") OR (comm=\"*/php\")"
+    },
+    {
+        "name": "view",
+        "query": "comm=\"view\" OR comm=\"*/view\""
+    },
+    {
+        "name": "env",
+        "query": "comm=\"env *\" OR comm=\"* env *\" OR comm=\"*/env *\" OR comm=\"* */env *\" OR *.env OR comm=\"* *.env\" OR comm=\"* *.env *\""
+    },
+    {
+        "name": "expect",
+        "query": "expect -c"
+    },
+    {
+        "name": "luatex",
+        "query": "luatex -shell-escape"
+    },
+    {
+        "name": "busybox",
+        "query": "comm=\"busybox *\" OR comm=\"*/busybox *\""
+    },
+    {
+        "name": "crash",
+        "query": "crash -h"
+    },
+    {
+        "name": "setlock",
+        "query": "setlock"
+    },
+    {
+        "name": "jrunscript",
+        "query": "jrunscript -e"
+    },
+    {
+        "name": "scanmem",
+        "query": "scanmem"
+    },
+    {
+        "name": "elvish",
+        "query": "elvish"
+    },
+    {
+        "name": "apt",
+        "query": "apt changelog"
+    },
+    {
+        "name": "enscript",
+        "query": "enscript"
+    },
+    {
+        "name": "smbclient",
+        "query": "smbclient"
+    },
+    {
+        "name": "ash",
+        "query": "comm=\"ash\" OR comm=\"*/ash\" OR comm=\"* ash\" OR comm=\"* */ash\" OR \"ash -c\""
+    },
+    {
+        "name": "c89",
+        "query": "c89"
+    },
+    {
+        "name": "sqlite3",
+        "query": "comm=\"sqlite3\" OR comm=\"*/sqlite3\" OR comm=\"sqlite3 *\" OR comm=\"*/sqlite3 *\" OR comm=\"* */sqlite3 *\" OR comm=\"* sqlite3 *\""
+    },
+    {
+        "name": "vimdiff",
+        "query": "vimdiff"
+    },
+    {
+        "name": "cpio",
+        "query": "comm=\"cpio *\" OR comm=\"* cpio\" OR comm=\"* cpio *\" OR comm=\"*/cpio *\" OR comm=\"* */cpio *\""
+    },
+    {
+        "name": "posh",
+        "query": "posh"
+    },
+    {
+        "name": "msgfilter",
+        "query": "msgfilter"
+    },
+    {
+        "name": "logsave",
+        "query": "\"logsave /dev/null\""
+    },
+    {
+        "name": "time",
+        "query": "\"time /bin/*\""
+    },
+    {
+        "name": "choom",
+        "query": "choom"
+    },
+    {
+        "name": "julia",
+        "query": "julia -e"
+    },
+    {
+        "name": "sqlmap",
+        "query": "sqlmap"
+    },
+    {
+        "name": "tasksh",
+        "query": "tasksh"
+    },
+    {
+        "name": "ex",
+        "query": "comm=ex *"
+    },
+    {
+        "name": "pico",
+        "query": "pico*"
+    },
+    {
+        "name": "bundle",
+        "query": "comm=*bundle*"
+    },
+    {
+        "name": "tmux",
+        "query": "tmux"
+    },
+    {
+        "name": "rpm",
+        "query": "rpm --eval"
+    },
+    {
+        "name": "service",
+        "query": "*service*/bin/sh"
+    },
+    {
+        "name": "setarch",
+        "query": "setarch"
+    },
+    {
+        "name": "csvtool",
+        "query": "csvtool"
+    },
+    {
+        "name": "gcloud",
+        "query": "gcloud"
+    },
+    {
+        "name": "loginctl",
+        "query": "loginctl user-status*"
+    },
+    {
+        "name": "psftp",
+        "query": "psftp"
+    },
+    {
+        "name": "hping3",
+        "query": "hping3"
+    },
+    {
+        "name": "mysql",
+        "query": "mysql (\"-e\" OR \"--default-auth\")"
+    },
+    {
+        "name": "csh",
+        "query": "comm=csh"
+    },
+    {
+        "name": "unshare",
+        "query": "\"unshare /bin/*\""
+    },
+    {
+        "name": "multitime",
+        "query": "multitime /bin/*"
+    },
+    {
+        "name": "bconsole",
+        "query": "bconsole"
+    },
+    {
+        "name": "tex",
+        "query": "tex --shell-escape"
+    },
+    {
+        "name": "ginsh",
+        "query": "ginsh"
+    },
+    {
+        "name": "xelatex",
+        "query": "xelatex"
+    },
+    {
+        "name": "ncdu",
+        "query": "ncdub"
+    },
+    {
+        "name": "pdftex",
+        "query": "pdftex --shell-escape"
+    },
+    {
+        "name": "pg",
+        "query": "comm=*pg*"
+    },
+    {
+        "name": "tdbtool",
+        "query": "tdbtool* /bin/*"
+    },
+    {
+        "name": "cowsay",
+        "query": "/bin/* cowsay"
+    },
+    {
+        "name": "pry",
+        "query": "prysystem(*)"
+    },
+    {
+        "name": "batcat",
+        "query": "batcat --paging"
+    },
+    {
+        "name": "nmap",
+        "query": "comm=\"nmap *\" OR comm=\"*/nmap *\""
+    },
+    {
+        "name": "ltrace",
+        "query": "ltrace"
+    },
+    {
+        "name": "cabal",
+        "query": "cabal exec"
+    },
+    {
+        "name": "gtester",
+        "query": "gtester"
+    },
+    {
+        "name": "mawk",
+        "query": "mawk"
+    },
+    {
+        "name": "runscript",
+        "query": "/bin/* runscript"
+    },
+    {
+        "name": "telnet",
+        "query": "telnet */bin/*"
+    },
+    {
+        "name": "xargs",
+        "query": "xargs -a"
+    },
+    {
+        "name": "msfconsole",
+        "query": "msfconsole"
+    },
+    {
+        "name": "script",
+        "query": "script -q"
+    },
+    {
+        "name": "fish",
+        "query": "fish"
+    },
+    {
+        "name": "dc",
+        "query": "dc -e"
+    },
+    {
+        "name": "busctl",
+        "query": "busctl"
+    },
+    {
+        "name": "python",
+        "query": "comm=\"python *\" OR comm=\"python3 *\" OR \"import *os*\" OR comm=\"pip3 *\" OR \"pip *\" OR \"import sys\""
+    },
+    {
+        "name": "ionice",
+        "query": "ionice /bin/*"
+    },
+    {
+        "name": "gem",
+        "query": "gem open -e"
+    },
+    {
+        "name": "flock",
+        "query": "flock /bin/*"
+    },
+    {
+        "name": "dash",
+        "query": "comm=dash"
+    },
+    {
+        "name": "rpmquery",
+        "query": "rpmquery --eval"
+    },
+    {
+        "name": "perl",
+        "query": "perl exec /bin/*"
+    },
+    {
+        "name": "screen",
+        "query": "comm=screen"
+    },
+    {
+        "name": "cobc",
+        "query": "*/bin/* cobc"
+    },
+    {
+        "name": "cowthink",
+        "query": "/bin/* cowthink"
+    },
+    {
+        "name": "sftp",
+        "query": "sftp AND (\"/bin/*\" OR \"get\" OR \"put\")"
+    },
+    {
+        "name": "scp",
+        "query": "comm=scp"
+    },
+    {
+        "name": "rake",
+        "query": "rake -p"
+    },
+    {
+        "name": "ruby",
+        "query": "ruby -e"
+    },
+    {
+        "name": "neofetch",
+        "query":"neofetch AND (\"*/bin/*\" OR \"--ascii\")"
+    },
+    {
+        "name": "zip",
+        "query": "comm=zip"
+    },
+    {
+        "name": "latex",
+        "query": "latex --shell-escape"
+    },
+    {
+        "name": "byebug",
+        "query": "byebug"
+    },
+    {
+        "name": "ed",
+        "query": "comm=ed"
+    },
+    {
+        "name": "grc",
+        "query": "grc --pty /bin/*"
+    },
+    {
+        "name": "puppet",
+        "query": "comm=puppet"
+    },
+    {
+        "name": "at",
+        "query": "echo at"
+    },
+    {
+        "name": "c99",
+        "query": "c99"
+    },
+    {
+        "name": "lua",
+        "query": "comm=*lua* AND /bin/*"
+    },
+    {
+        "name": "rc",
+        "query": "rc -c /bin/*"
+    },
+    {
+        "name": "apt-get",
+        "query": "apt-get changelog */bin/*"
+    },
+    {
+        "name": "minicom",
+        "query": "minicom -D /dev/null"
+    },
+    {
+        "name": "ghc",
+        "query": "ghc -e *bin/*"
+    },
+    {
+        "name": "wish",
+        "query": "wishexec /bin/*"
+    },
+    {
+        "name": "octave",
+        "query": "octave-cli --eval"
+    },
+    {
+        "name": "vim",
+        "query": "vim"
+    },
+    {
+        "name": "dmesg",
+        "query": "dmesg */bin/*"
+    },
+    {
+        "name": "strace",
+        "query": "strace /bin/*"
+    },
+    {
+        "name": "npm",
+        "query": "npm exec /bin/*"
+    },
+    {
+        "name": "cpulimit",
+        "query": "cpulimit -l -f /bin/*"
+    },
+    {
+        "name": "rpmdb",
+        "query": "rpmdb --eval"
+    },
+    {
+        "name": "tmate",
+        "query": "tmate -c /bin/*"
+    },
+    {
+        "name": "nano",
+        "query": "nano -s *bin/*"
+    },
+    {
+        "name": "easy_install",
+        "query": "easy_install"
+    },
+    {
+        "name": "pandoc",
+        "query": "pandoc (\"-t\" OR \"/bin/*\""
+    },
+    {
+        "name": "timeout",
+        "query": "timeout /bin/*"
+    },
+    {
+        "name": "ghci",
+        "query": "ghciSystem.Process.callCommand /bin/*"
+    },
+    {
+        "name": "timedatectl",
+        "query": "timedatectl */bin/*"
+    },
+    {
+        "name": "softlimit",
+        "query": "softlimit /bin/*"
+    },
+    {
+        "name": "ksh",
+        "query": "ksh"
+    },
+    {
+        "name": "vi",
+        "query": "vi /bin/*"
+    },
+    {
+        "name": "cpan",
+        "query": "cpan"
+    },
+    {
+        "name": "nroff",
+        "query": "nroff"
+    },
+    {
+        "name": "zathura",
+        "query": "zathura /bin/*"
+    },
+    {
+        "name": "perf",
+        "query": "perf stat /bin/*"
+    },
+    {
+        "name": "start-stop-daemon",
+        "query": "start-stop-daemon -n -S -x /bin/*"
+    },
+    {
+        "name": "pdflatex",
+        "query": "pdflatex"
+    },
+    {
+        "name": "taskset",
+        "query": "taskset 1 /bin/*"
+    },
+    {
+        "name": "sshpass",
+        "query": "sshpass /bin/*"
+    },
+    {
+        "name": "perlbug",
+        "query": "perlbug -s"
+    },
+    {
+        "name": "torsocks",
+        "query": "torsocks /bin/*"
+    },
+    {
+        "name": "rvim",
+        "query": "rvim"
+    },
+    {
+        "name": "psql",
+        "query": "psql*/bin/sh"
+    },
+    {
+        "name": "socat",
+        "query": "socat"
+    },
+    {
+        "name": "latexmk",
+        "query": "latexmk -e"
+    },
+    {
+        "name": "ansible-playbook",
+        "query": "ansible-playbook"
+    },
+    {
+        "name": "awk",
+        "query": "awk"
+    },
+    {
+        "name": "rpmverify",
+        "query": "rpmverify --eval"
+    },
+    {
+        "name": "lwp-download",
+        "query": "lwp-download"
+    },
+    {
+        "name": "eqn",
+        "query": "eqn"
+    },
+    {
+        "name": "crontab",
+        "query": "comm=\"crontab *\""
+    },
+    {
+        "name": "fmt",
+        "query": "fmt"
+    },
+    {
+        "name": "ptx",
+        "query": "ptx -w 5000"
+    },
+    {
+        "name": "red",
+        "query": "red"
+    },
+    {
+        "name": "msgcat",
+        "query": "msgcat -P"
+    },
+    {
+        "name": "ip",
+        "query": "ip -force -batch"
+    },
+    {
+        "name": "rev",
+        "query": "rev"
+    },
+    {
+        "name": "check_log",
+        "query": "check_log -F -O"
+    },
+    {
+        "name": "tftp",
+        "query": "*tftp *get "
+    },
+    {
+        "name": "systemd-resolve",
+        "query": "sudo systemd-resolve --status!sh"
+    },
+    {
+        "name": "chroot",
+        "query": "chroot"
+    },
+    {
+        "name": "ab",
+        "query": "ab"
+    },
+    {
+        "name": "file",
+        "query": "file -f-m"
+    },
+    {
+        "name": "bridge",
+        "query": "bridge -b"
+    },
+    {
+        "name": "bzip2",
+        "query": "bzip2 -c -d"
+    },
+    {
+        "name": "nl",
+        "query": "nl -bn -w1 -s"
+    },
+    {
+        "name": "tic",
+        "query": "tic -C"
+    },
+    {
+        "name": "yum",
+        "query": "yum install http*"
+    },
+    {
+        "name": "alpine",
+        "query": "alpine -F"
+    },
+    {
+        "name": "dosbox",
+        "query": "dosbox -c"
+    },
+    {
+        "name": "column",
+        "query": "column"
+    },
+    {
+        "name": "xz",
+        "query": "xz -d"
+    },
+    {
+        "name": "base58",
+        "query": "*base58 --decode"
+    },
+    {
+        "name": "cupsfilter",
+        "query": "cupsfilter -i -m"
+    },
+    {
+        "name": "unzip",
+        "query": "unzip -K -p"
+    },
+    {
+        "name": "zsoelim",
+        "query": "zsoelim"
+    },
+    {
+        "name": "chown",
+        "query": "chown -un -gn"
+    },
+    {
+        "name": "vipw",
+        "query": "vipw"
+    },
+    {
+        "name": "join",
+        "query": "*join -a"
+    },
+    {
+        "name": "genisoimage",
+        "query": "genisoimage -q -o"
+    },
+    {
+        "name": "iconv",
+        "query": "iconv -f"
+    },
+    {
+        "name": "exiftool",
+        "query": "exiftool"
+    },
+    {
+        "name": "diff",
+        "query": "diff --recursive"
+    },
+    {
+        "name": "paste",
+        "query": "paste"
+    },
+    {
+        "name": "openssl",
+        "query": "openssl"
+    },
+    {
+        "name": "tee",
+        "query": "echo DATA tee -a"
+    },
+    {
+        "name": "tail",
+        "query": "tail -c1G"
+    },
+    {
+        "name": "ssh-keyscan",
+        "query": "ssh-keyscan -f"
+    },
+    {
+        "name": "efax",
+        "query": "efax -d"
+    },
+    {
+        "name": "unsquashfs",
+        "query": "unsquashfs shell"
+    },
+    {
+        "name": "uudecode",
+        "query": "uuencode"
+    },
+    {
+        "name": "look",
+        "query": "look"
+    },
+    {
+        "name": "terraform",
+        "query": "terraform consolefile*"
+    },
+    {
+        "name": "msgmerge",
+        "query": "*msgmerge -P"
+    },
+    {
+        "name": "varnishncsa",
+        "query": "varnishncsa -g -q"
+    },
+    {
+        "name": "sysctl",
+        "query": "(\"*kill -QUIT cat\") OR (\"/usr/sbin/sysctl -n\")"
+    },
+    {
+        "name": "redcarpet",
+        "query": "redcarpet"
+    },
+    {
+        "name": "ntpdate",
+        "query": "ntpdate -a x -k -d"
+    },
+    {
+        "name": "wall",
+        "query": "sudo wall --nobanner"
+    },
+    {
+        "name": "date",
+        "query": "date -f"
+    },
+    {
+        "name": "check_ssl_cert",
+        "query": "echo tee chmod *cert --curl-bin"
+    },
+    {
+        "name": "ul",
+        "query": "ul"
+    },
+    {
+        "name": "comm",
+        "query": "comm /dev/null 2>/dev/null"
+    },
+    {
+        "name": "unexpand",
+        "query": "unexpand -t*"
+    },
+    {
+        "name": "check_statusfile",
+        "query": "check_statusfile"
+    },
+    {
+        "name": "soelim",
+        "query": "soelim"
+    },
+    {
+        "name": "opkg",
+        "query": "sudo opkg install deb"
+    },
+    {
+        "name": "hexdump",
+        "query": "hexdump -C"
+    },
+    {
+        "name": "bpftrace",
+        "query": "sudo bpftrace -e 'BEGIN {system(\"/bin/sh\");exit()}'*echo 'BEGIN {system(\"/bin/sh\");exit()}' >*sudo bpftrace *sudo bpftrace -c /bin/sh -e 'END {exit()}'"
+    },
+    {
+        "name": "ascii-xfr",
+        "query": "ascii-xfr -ns"
+    },
+    {
+        "name": "fping",
+        "query": "fping -f"
+    },
+    {
+        "name": "ss",
+        "query": "ss -a -F"
+    },
+    {
+        "name": "as",
+        "query": "as @"
+    },
+    {
+        "name": "troff",
+        "query": "troff"
+    },
+    {
+        "name": "csplit",
+        "query": "*csplit 1cat"
+    },
+    {
+        "name": "systemctl",
+        "query": "*echo systemctl enable --now"
+    },
+    {
+        "name": "w3m",
+        "query": "w3m -dump"
+    },
+    {
+        "name": "nasm",
+        "query": "nasm -@"
+    },
+    {
+        "name": "ln",
+        "query": "sudo ln -fs /bin/sh /bin/lnsudo ln"
+    },
+    {
+        "name": "basenc",
+        "query": "basenc --base64"
+    },
+    {
+        "name": "espeak",
+        "query": "espeak -qXf"
+    },
+    {
+        "name": "bc",
+        "query": "bc -s quit"
+    },
+    {
+        "name": "ksshell",
+        "query": "ksshell -i"
+    },
+    {
+        "name": "sudo",
+        "query": "sudo sudo /bin/sh"
+    },
+    {
+        "name": "nm",
+        "query": "nm @"
+    },
+    {
+        "name": "ssh-keygen",
+        "query": "ssh-keygen -D"
+    },
+    {
+        "name": "readelf",
+        "query": "readelf -a @"
+    },
+    {
+        "name": "pidstat",
+        "query": "pidstat -e"
+    },
+    {
+        "name": "tac",
+        "query": "tac -s RANDOM"
+    },
+    {
+        "name": "whiptail",
+        "query": "*whiptail --textbox --scrolltext"
+    },
+    {
+        "name": "jq",
+        "query": "jq -Rr"
+    },
+    {
+        "name": "nc",
+        "query": "nc -l -p"
+    },
+    {
+        "name": "nft",
+        "query": "nft -f"
+    },
+    {
+        "name": "dmsetup",
+        "query": "sudo dmsetup create base --exec"
+    },
+    {
+        "name": "snap",
+        "query": "sudo snap install --dangerous --devmode"
+    },
+    {
+        "name": "dialog",
+        "query": "*dialog --textbox"
+    },
+    {
+        "name": "gcore",
+        "query": "gcore "
+    },
+    {
+        "name": "arj",
+        "query": "arj a"
+    },
+    {
+        "name": "clamscan",
+        "query": "touch clamscan --no-summary -d -f"
+    },
+    {
+        "name": "cmp",
+        "query": "cmp /dev/zero -b -l"
+    },
+    {
+        "name": "restic",
+        "query": "restic backup -r rest"
+    },
+    {
+        "name": "mount",
+        "query": "sudo mount -o bind /bin/sh /bin/mountsudo mount"
+    },
+    {
+        "name": "xpad",
+        "query": "xpad -f"
+    },
+    {
+        "name": "hd",
+        "query": "hd"
+    },
+    {
+        "name": "vigr",
+        "query": "vigr"
+    },
+    {
+        "name": "tbl",
+        "query": "tbl"
+    },
+    {
+        "name": "arp",
+        "query": "arp -v -f"
+    },
+    {
+        "name": "setfacl",
+        "query": "setfacl -m -u"
+    },
+    {
+        "name": "pkg",
+        "query": "sudo pkg install -y --no-repo-update"
+    },
+    {
+        "name": "aria2c",
+        "query": "aria2c -o"
+    },
+    {
+        "name": "msgattrib",
+        "query": "*msgattrib -P *"
+    },
+    {
+        "name": "lwp-request",
+        "query": "lwp-request \"file://"
+    },
+    {
+        "name": "ar",
+        "query": "ar r cat"
+    },
+    {
+        "name": "sort",
+        "query": "sort -m"
+    },
+    {
+        "name": "tcpdump",
+        "query": "echo > chmod +x tcpdump -ln -i lo -w /dev/null -W 1 -G 1 -z"
+    },
+    {
+        "name": "highlight",
+        "query": "highlight --no-doc --failsafe"
+    },
+    {
+        "name": "shuf",
+        "query": "shuf -z"
+    },
+    {
+        "name": "cut",
+        "query": "cut -d -f1"
+    },
+    {
+        "name": "openvt",
+        "query": "sudo openvt -- sh -c"
+    },
+    {
+        "name": "install",
+        "query": "install -m 6777"
+    },
+    {
+        "name": "wc",
+        "query": "wc --files0-from "
+    },
+    {
+        "name": "msgconv",
+        "query": "msgconv -P "
+    },
+    {
+        "name": "base64",
+        "query": "base64 | base64 --decode"
+    },
+    {
+        "name": "ksu",
+        "query": "sudo ksu -q -e"
+    },
+    {
+        "name": "uuencode",
+        "query": "uuencode /dev/stdout"
+    },
+    {
+        "name": "aspell",
+        "query": "aspell -c"
+    },
+    {
+        "name": "pr",
+        "query": "pr -T"
+    },
+    {
+        "name": "msguniq",
+        "query": "msguniq -P"
+    },
+    {
+        "name": "mosquitto",
+        "query": "mosquitto -c"
+    },
+    {
+        "name": "apache2ctl",
+        "query": "*apache2ctl Include"
+    },
+    {
+        "name": "update-alternatives",
+        "query": "update-alternatives"
+    },
+    {
+        "name": "xmore",
+        "query": "*xmore"
+    },
+    {
+        "name": "7z",
+        "query": "*7z a -ttar -an -so | 7z e -ttar -si -so"
+    },
+    {
+        "name": "fold",
+        "query": "*fold -w99999999"
+    },
+    {
+        "name": "dmidecode",
+        "query": "*sudo dmidecode --no-sysfs -d  --dump-bin"
+    },
+    {
+        "name": "head",
+        "query": "head -c1G"
+    },
+    {
+        "name": "virsh",
+        "query": "virsh qemu"
+    },
+    {
+        "name": "od",
+        "query": "od -An -c -w9999"
+    },
+    {
+        "name": "ascii85",
+        "query": "sudo ascii85 --decode"
+    },
+    {
+        "name": "expand",
+        "query": "expand"
+    },
+    {
+        "name": "mtr",
+        "query": "mtr --raw -F"
+    },
+    {
+        "name": "atobm",
+        "query": "atobm awk -F printf"
+    },
+    {
+        "name": "basez",
+        "query": "basez --decode"
+    },
+    {
+        "name": "xmodmap",
+        "query": " xmodmap -v"
+    },
+    {
+        "name": "pkexec",
+        "query": "sudo pkexec"
+    },
+    {
+        "name": "whois",
+        "query": "whois -h -p"
+    },
+    {
+        "name": "finger",
+        "query": "finger"
+    },
+    {
+        "name": "pax",
+        "query": "pax -w"
+    },
+    {
+        "name": "yelp",
+        "query": "yelp man"
+    },
+    {
+        "name": "redis",
+        "query": "redis-cli -h set dir save"
+    },
+    {
+        "name": "dos2unix",
+        "query": "dos2unix -f -n"
+    },
+    {
+        "name": "agetty",
+        "query": "./agetty -o -p -l -a root tty"
+    },
+    {
+        "name": "cancel",
+        "query": "cancel -u -h"
+    },
+    {
+        "name": "rlogin",
+        "query": "rlogin -l -p"
+    },
+    {
+        "name": "lp",
+        "query": "lp -h"
+    },
+    {
+        "name": "socket",
+        "query": "socket vp -i"
+    }
+]
